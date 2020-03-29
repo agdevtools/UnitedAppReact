@@ -11,6 +11,9 @@ class ListPlayersComponent extends Component {
             message: null
         }
         this.refreshPlayers = this.refreshPlayers.bind(this)
+        this.deletePlayerClicked = this.deletePlayerClicked.bind(this)
+        this.updatePlayerClicked = this.updatePlayerClicked.bind(this)
+        this.addPlayerClicked = this.addPlayerClicked.bind(this)
     }
 
     componentDidMount() {
@@ -27,17 +30,39 @@ class ListPlayersComponent extends Component {
             )
     }
 
+        deletePlayerClicked(id) {
+            TeamDataService.deletePlayer(id)
+                .then(
+                    response => {
+                        this.setState({ message: `Delete of player number ${id} Successful` })
+                        this.refreshPlayers()
+                    }
+                )
+
+        }
+
+        addPlayerClicked() {
+            this.props.history.push(`/team/-1`)
+        }
+
+        updatePlayerClicked(id) {
+            console.log('update ' + id)
+            this.props.history.push(`/team/${id}`)
+        }
 
     render() {
         return (
             <div className="container">
-                <h3>All Players</h3>
+                <h3>First Team Squad 19/20 </h3>
+                {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
                 <div className="container">
                     <table className="table">
                         <thead>
                             <tr>
                                 <th>Player Number</th>
                                 <th>Player Name</th>
+                                <th>Update</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,11 +72,16 @@ class ListPlayersComponent extends Component {
                                         <tr key={player.playerId}>
                                             <td>{player.playerId}</td>
                                             <td>{player.playerName}</td>
+                                            <td><button className="btn btn-success" onClick={() => this.updatePlayerClicked(player.playerId)}>Update</button></td>
+                                            <td><button className="btn btn-warning" onClick={() => this.deletePlayerClicked(player.playerId)}>Delete</button></td>
                                         </tr>
                                 )
                             }
                         </tbody>
                     </table>
+                      <div className="row">
+                                    <button className="btn btn-success" onClick={this.addPlayerClicked}>Add</button>
+                                </div>
                 </div>
             </div>
         )
