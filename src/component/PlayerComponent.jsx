@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import TeamDataService from '../service/TeamDataService';
 
-const INSTRUCTOR = 'in28minutes'
-
 class PlayerComponent extends Component {
 
     constructor(props) {
@@ -12,31 +10,42 @@ class PlayerComponent extends Component {
         this.state = {
             playerId: this.props.match.params.id,
             playerName: ''
-
         }
            this.onSubmit = this.onSubmit.bind(this)
            this.validate = this.validate.bind(this)
-
     }
 
-    componentDidMount() {
+        componentDidMount() {
+            // eslint-disable-next-line
+            if (this.state.id == -1) {
+                return
+            }
 
-        console.log(this.state.id)
-
-        // eslint-disable-next-line
-        if (this.state.id == -1) {
-            return
+            TeamDataService.retrievePlayer(this.state.playerId)
+                .then(response => this.setState({
+                    playerId : response.data.playerId,
+                    playerName: response.data.playerName
+                }))
         }
 
-        TeamDataService.retrievePlayer(this.state.id)
-            .then(response => this.setState({
-                playerName: response.data.playerName
-            }))
+    onSubmit(values) {
+
+        let player = {
+            playerId: values.playerId,
+            playerName: values.playerName
+        }
+
+        if (this.props.match.params.id == -1) {
+              TeamDataService.createPlayer(player.playerId, player.playerName, player)
+                .then(() => this.props.history.push('/team'))
+        } else {
+              TeamDataService.updatePlayer(this.state.playerId, player.playerName, player)
+                .then(() => this.props.history.push('/team'))
+        }
+
+        console.log(values);
     }
 
-onSubmit(values) {
-    console.log(values);
-}
 
 validate(values) {
     let errors = {}
@@ -51,7 +60,7 @@ validate(values) {
 
     render() {
 
-        let { playerName, playerId } = this.state
+        let { playerId, playerName } = this.state
 
         return (
             <div>
@@ -71,7 +80,7 @@ validate(values) {
                                     <ErrorMessage name="playerName" component="div" className="alert alert-warning" />
                                     <fieldset className="form-group">
                                         <label>playerId</label>
-                                        <Field className="form-control" type="text" name="playerId" disabled />
+                                        <Field className="form-control" type="text" name="playerId" />
                                     </fieldset>
                                     <fieldset className="form-group">
                                         <label>playerName</label>
