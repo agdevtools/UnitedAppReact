@@ -21,7 +21,7 @@ class ListPlayersComponent extends Component {
     }
 
     refreshPlayers() {
-        TeamDataService.retrieveAllPlayers()//HARDCODED
+        TeamDataService.retrieveAllPlayers()
             .then(
                 response => {
                     console.log(response);
