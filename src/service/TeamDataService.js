@@ -9,7 +9,7 @@ class TeamDataService {
     }
 
     deletePlayer(id) {
-        return axios.delete(`${TEAM_API_URL}/delete/{playerId}?playerId=${id}`);
+        return axios.delete(`${TEAM_API_URL}/team/{playerId}?playerId=${id}`);
     }
 
     retrievePlayer(id) {
@@ -21,7 +21,7 @@ class TeamDataService {
       }
 
       createPlayer(id, playerName, player) {
-          return axios.post(`${TEAM_API_URL}/newplayer/${playerName}/player/${id}`, player);
+          return axios.post(`${TEAM_API_URL}/team/${playerName}/player/${id}`, player);
       }
 
 }
