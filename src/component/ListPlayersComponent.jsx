@@ -61,8 +61,8 @@ class ListPlayersComponent extends Component {
                             <tr>
                                 <th>Player Number</th>
                                 <th>Player Name</th>
-                                <th>Update</th>
-                                <th>Delete</th>
+                                <th> </th>
+                                <th> </th>
                             </tr>
                         </thead>
                         <tbody>
