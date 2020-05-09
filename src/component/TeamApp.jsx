@@ -16,7 +16,16 @@ class TeamApp extends Component {
         <Router>
             <>
               <br></br>
-              <h1>The United App    <img src={Logo}   width="150" height="125" align="middle" alt='website logo' /></h1>
+              <main>
+    <body>
+              <div class="header-img">
+                 <h1>The United App </h1>
+                  <div class="menu">
+                    </div>
+                  </div>
+                  </body>
+                  <img src={Logo}   width="150" height="125" align="right" alt='website logo' />
+                  </main>
               <br></br>
               <Switch>
                  <Route path="/" exact component={ListPlayersComponent} />
@@ -25,6 +34,7 @@ class TeamApp extends Component {
               </Switch>
 
             </>
+            <footer align="right"> copyright agDevtools 2020 </footer>
         </Router>
         )
     }

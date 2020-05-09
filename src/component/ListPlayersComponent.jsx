@@ -56,7 +56,7 @@ class ListPlayersComponent extends Component {
                 <h3>First Team Squad 19/20 </h3>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
                 <div className="container">
-                    <table className="table">
+                    <table className="table" >
                         <thead>
                             <tr>
                                 <th>Player Number</th>
