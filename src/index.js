@@ -5,30 +5,17 @@ import App from './App';
 import Users from './component/user';
 import Contact from './component/contact';
 import Homepage from './component/HomePage';
+import ListPlayersComponent from './component/ListPlayersComponent';
 import * as serviceWorker from './serviceWorker';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 const routing = (
   <Router>
     <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/users">Users</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-        <li>
-            <Link to="/homepage">Homepage</Link>
-        </li>
-      </ul>
-      <Route exact path="/" component={App} />
-      <Route exact path="/users" component={Users} />
+      <Route exact path="/" component={Homepage} />
+      <Route exact path="/team" component={ListPlayersComponent} />
       <Route exact path="/contact" component={Contact} />
-      <Route exact path="/homepage" component={Homepage} />
+      <Route exact path="/homepage" component={App} />
     </div>
   </Router>
 )
