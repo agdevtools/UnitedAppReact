@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import TeamDataService from '../service/TeamDataService';
+import PlayerComponent from './PlayerComponent';
+
 
 class ListPlayersComponent extends Component {
 
@@ -84,6 +86,7 @@ class ListPlayersComponent extends Component {
                                 </div>
                 </div>
             </div>
+
         )
     }
 
