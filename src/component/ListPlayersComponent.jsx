@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import TeamDataService from '../service/TeamDataService';
 import PlayerComponent from './PlayerComponent';
+import Logo from './logo2.png';
+import myheader from './myheader';
+import {
+  Link
+} from "react-router-dom";
 
 
 class ListPlayersComponent extends Component {
@@ -54,7 +59,8 @@ class ListPlayersComponent extends Component {
 
     render() {
         return (
-            <div className="container">
+                 <div className="container">
+                 ReactDOM.render(myheader);
                 <h3>First Team Squad 19/20 </h3>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
                 <div className="container">

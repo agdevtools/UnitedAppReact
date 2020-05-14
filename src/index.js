@@ -5,6 +5,7 @@ import App from './App';
 import Users from './component/user';
 import Contact from './component/contact';
 import Homepage from './component/HomePage';
+import PlayerComponent from './component/PlayerComponent';
 import ListPlayersComponent from './component/ListPlayersComponent';
 import * as serviceWorker from './serviceWorker';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
@@ -16,6 +17,7 @@ const routing = (
       <Route exact path="/team" component={ListPlayersComponent} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/homepage" component={App} />
+      <Route path="/team/:id" component={PlayerComponent} />
     </div>
   </Router>
 )
