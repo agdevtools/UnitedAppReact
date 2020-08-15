@@ -1,16 +1,15 @@
-import React, {Component} from 'react';
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
-import TeamApp from './component/TeamApp';
+import Routing from './Routing';
 
-class App extends Component {
+
+class App extends React.Component {
   render() {
     return (
-      <div className="container">
-        <TeamApp />
+      <div>
+        <Routing/>
       </div>
-    );
+    )
   }
 }
-
-export default App;
+export default App

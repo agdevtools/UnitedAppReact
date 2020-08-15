@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import TeamDataService from '../service/TeamDataService';
+import MyHeader from './MyHeader';
+import MyFooter from './MyFooter';
 
 class PlayerComponent extends Component {
 
@@ -63,8 +65,9 @@ validate(values) {
         let { playerId, playerName } = this.state
 
         return (
-            <div>
-                <h3>Player</h3>
+            <div className="container">
+            <MyHeader/>
+             <h3>Player</h3>
                 <div className="container">
                     <Formik
                         initialValues={{ playerId, playerName }}
@@ -93,6 +96,7 @@ validate(values) {
                     </Formik>
 
                 </div>
+                       <MyFooter/>
             </div>
         )
     }

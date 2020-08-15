@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import TeamDataService from '../service/TeamDataService';
+import MyHeader from './MyHeader';
+import MyFooter from './MyFooter';
 
-class ListPlayersComponent extends Component {
+class TeamComponent extends Component {
 
 
     constructor(props) {
@@ -42,19 +44,22 @@ class ListPlayersComponent extends Component {
         }
 
         addPlayerClicked() {
-            this.props.history.push(`/team/-1`)
+            this.props.history.push(`/player/-1`)
         }
 
         updatePlayerClicked(id) {
             console.log('update ' + id)
-            this.props.history.push(`/team/${id}`)
+            this.props.history.push(`/player/${id}`)
         }
 
-    render() {
+        render() {
         return (
-            <div className="container">
+                <div className="container">
+
+                <MyHeader/>
                 <h3>First Team Squad 19/20 </h3>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
+
                 <div className="container">
                     <table className="table" >
                         <thead>
@@ -83,9 +88,17 @@ class ListPlayersComponent extends Component {
                                     <button className="btn btn-success" onClick={this.addPlayerClicked}>Add</button>
                                 </div>
                 </div>
-            </div>
+                    <MyFooter/>
+                 </div>
+
         )
     }
 
 }
-export default ListPlayersComponent
+export default TeamComponent
+
+
+
+
+
+
