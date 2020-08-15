@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9da30f3a-c913-4ef9-916c-7e40abfb09e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/MyFooter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/HomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/ListPlayersComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TeamComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/PlayerComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/PlayerComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/TeamApp.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/myheader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/MyHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/user.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
-    </list>
+    <list default="true" id="9da30f3a-c913-4ef9-916c-7e40abfb09e7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,22 +52,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/TeamComponent.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/contact.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+            <state relative-caret-position="124">
+              <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/component/contact.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/MyHeader.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="334">
@@ -100,6 +81,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="41" selection-start-column="41" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/PlayerComponent.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -144,8 +134,6 @@
         <option value="$PROJECT_DIR$/src/component/ListPlayersComponent.jsx" />
         <option value="$PROJECT_DIR$/src/component/ListTeamComponent.jsx" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/component/contact.jsx" />
-        <option value="$PROJECT_DIR$/src/component/PlayerComponent.jsx" />
         <option value="$PROJECT_DIR$/src/Routing.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
@@ -153,6 +141,8 @@
         <option value="$PROJECT_DIR$/src/component/HomePage.jsx" />
         <option value="$PROJECT_DIR$/src/component/MyFooter.jsx" />
         <option value="$PROJECT_DIR$/src/component/MyHeader.jsx" />
+        <option value="$PROJECT_DIR$/src/component/PlayerComponent.jsx" />
+        <option value="$PROJECT_DIR$/src/component/contact.jsx" />
       </list>
     </option>
   </component>
@@ -182,17 +172,6 @@
             <path>
               <item name="frontend-spring-boot-unitedapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend-spring-boot-unitedapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend-spring-boot-unitedapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend-spring-boot-unitedapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend-spring-boot-unitedapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend-spring-boot-unitedapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -286,13 +265,6 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Routing2.js" />
-    <entry file="file://$PROJECT_DIR$/src/component/PlayerComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/TeamApp.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -347,20 +319,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/contact.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/TeamComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/HomePage.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -386,6 +344,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/TeamComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/PlayerComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/contact.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
     </entry>
