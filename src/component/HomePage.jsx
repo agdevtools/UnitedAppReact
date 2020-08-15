@@ -10,7 +10,7 @@ class Homepage extends Component {
     render() {
         return (
               <div class="header-img">
-                 <h2a>The United App <Link to="/teamapp"> <h2c>  Click to Enter </h2c> </Link> </h2a>
+                 <h2a>The United App <Link to="/team"> <h2b>  Click to Enter </h2b> </Link> </h2a>
                   </div>
         )
     }

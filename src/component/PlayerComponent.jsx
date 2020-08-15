@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import TeamDataService from '../service/TeamDataService';
+import Logo from './logo2.png';
 
 class PlayerComponent extends Component {
 
@@ -64,6 +65,7 @@ validate(values) {
 
         return (
             <div>
+              <h1>The United App   <img src={Logo}   width="150" height="125" align="right" alt='website logo' /> </h1>
                 <h3>Player</h3>
                 <div className="container">
                     <Formik
@@ -93,6 +95,7 @@ validate(values) {
                     </Formik>
 
                 </div>
+                       <footer align="right"> copyright agDevtools 2020 </footer>
             </div>
         )
     }

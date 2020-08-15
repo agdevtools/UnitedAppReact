@@ -60,11 +60,12 @@ class ListPlayersComponent extends Component {
 
     render() {
         return (
-                 <div className="container">
+                <div className="container">
+                <h1>The United App   <img src={Logo}   width="150" height="125" align="right" alt='website logo' /> </h1>
                 <h3>First Team Squad 19/20 </h3>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
                 <div className="container">
-                    <table className="table" >
+      <table className="table" >
                         <thead>
                             <tr>
                                 <th>Player Number</th>
@@ -91,10 +92,17 @@ class ListPlayersComponent extends Component {
                                     <button className="btn btn-success" onClick={this.addPlayerClicked}>Add</button>
                                 </div>
                 </div>
-            </div>
+                    <footer align="right"> copyright agDevtools 2020 </footer>
+                 </div>
 
         )
     }
 
 }
 export default ListPlayersComponent
+
+
+
+
+
+
