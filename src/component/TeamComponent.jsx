@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import TeamDataService from '../service/TeamDataService';
-import PlayerComponent from './PlayerComponent';
-import Logo from './logo2.png';
-import myheader from './myheader';
-import Routing from '.././Routing'
-import {
-  Link
-} from "react-router-dom";
+import MyHeader from './MyHeader';
+import MyFooter from './MyFooter';
 
-
-class ListPlayersComponent extends Component {
+class TeamComponent extends Component {
 
 
     constructor(props) {
@@ -50,22 +44,24 @@ class ListPlayersComponent extends Component {
         }
 
         addPlayerClicked() {
-            this.props.history.push(`/team/-1`)
+            this.props.history.push(`/player/-1`)
         }
 
         updatePlayerClicked(id) {
             console.log('update ' + id)
-            this.props.history.push(`/team/${id}`)
+            this.props.history.push(`/player/${id}`)
         }
 
-    render() {
+        render() {
         return (
                 <div className="container">
-                <h1>The United App   <img src={Logo}   width="150" height="125" align="right" alt='website logo' /> </h1>
+
+                <MyHeader/>
                 <h3>First Team Squad 19/20 </h3>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
+
                 <div className="container">
-      <table className="table" >
+                    <table className="table" >
                         <thead>
                             <tr>
                                 <th>Player Number</th>
@@ -92,14 +88,14 @@ class ListPlayersComponent extends Component {
                                     <button className="btn btn-success" onClick={this.addPlayerClicked}>Add</button>
                                 </div>
                 </div>
-                    <footer align="right"> copyright agDevtools 2020 </footer>
+                    <MyFooter/>
                  </div>
 
         )
     }
 
 }
-export default ListPlayersComponent
+export default TeamComponent
 
 
 

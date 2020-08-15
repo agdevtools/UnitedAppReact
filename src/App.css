@@ -66,6 +66,15 @@ h2b {
   margin-right: 0;
 }
 
+h2c {
+  display: block;
+  color: black;
+  font-size: 1.5em;
+   text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 h4 {
   display: block;
   color: #fff;

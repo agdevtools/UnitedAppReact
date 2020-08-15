@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import Contact from './component/contact';
 import Homepage from "./component/HomePage";
 import PlayerComponent from './component/PlayerComponent';
-import ListPlayersComponent from './component/ListPlayersComponent';
-import TeamApp from './component/TeamApp';
+import TeamComponent from './component/TeamComponent';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class Routing extends Component {
@@ -13,10 +12,9 @@ class Routing extends Component {
     <>
         <Switch>
             <Route path="/" exact component={Homepage} />
-            <Route path="/teamapp" exact component={TeamApp} />
-            <Route path="/team" exact component={ListPlayersComponent} />
+            <Route path="/team" exact component={TeamComponent} />
             <Route path="/contact" component={Contact} />
-            <Route path="/team/:id" component={PlayerComponent} />
+            <Route path="/player/:id" component={PlayerComponent} />
          </Switch>
     </>
   </Router>

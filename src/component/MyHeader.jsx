@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 
-class myheader extends Component {
+class MyHeader extends Component {
   render() {
         return (
 
@@ -14,8 +14,8 @@ class myheader extends Component {
          <a href="#default" class="logo" >UnitedApp</a>
               <div class="header-right">
                       <Link to="/"> <a class="active"> Home </a> </Link>
-                      <Link to="/team"> <a> Squads </a> </Link>
-                      <Link to="/player"> <a>Player</a> </Link>
+                      <Link to="/team"> <a> Team </a> </Link>
+                      <Link to="/contact"> <a>Contact</a> </Link>
               </div>
         </div>
 
@@ -24,4 +24,4 @@ class myheader extends Component {
 
         }
 
-export default myheader;
+export default MyHeader;
