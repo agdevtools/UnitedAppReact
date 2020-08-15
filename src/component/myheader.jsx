@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import TeamDataService from '../service/TeamDataService';
-import PlayerComponent from './PlayerComponent';
 import Logo from './logo2.png';
 import {
   Link
