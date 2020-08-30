@@ -5,26 +5,11 @@ import Select from 'react-select'
 import MyHeader from './MyHeader';
 import MyFooter from './MyFooter';
 import TextField from '@material-ui/core/TextField';
-import * as yup from "yup";
-import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
 
         const options = [
           { value: '1', label: 'First Team' },
           { value: '2', label: 'Reserves' }
           ];
-
-          let SignupSchema = yup.object().shape({
-            firstName: yup.string().required("This field is required."),
-            password: yup
-              .string()
-              .min(6, "Password is too short.")
-              .max(20, "Password is too long.")
-              .required("This field is required.")
-          });
-
-
-
 
 class PlayerComponent extends Component {
 
@@ -57,21 +42,12 @@ class PlayerComponent extends Component {
                 }))
         }
 
-//            refreshPlayers() {
-//                TeamDataService.retrieveAllPlayers()
-//                    .then(
-//                        response => {
-//                            console.log(response);
-//                            this.setState({ players: response.data })
-//                        }
-//                    )
-//            }
-
     onSubmit(values) {
 
         let player = {
             playerId: values.playerId,
-            playerName: values.playerName
+            playerName: values.playerName,
+            firstName: values.firstName
         }
 
         if (this.props.match.params.id == -1) {
@@ -89,6 +65,9 @@ class PlayerComponent extends Component {
 
 validate(values) {
     let errors = {}
+    if (!values.firstName) {
+                 errors.firstName = 'Enter a Player Name'
+    }
     if (!values.playerName) {
         errors.playerName = 'Enter a Player Name'
     } else if (values.playerName.length < 3) {
@@ -118,12 +97,19 @@ validate(values) {
                 <div className="container">
             <Formik
               initialValues={{
-                firstName: ""
+                firstName: "",
+                playerName: "",
+                playerId: ""
               }}
-              validationSchema={SignupSchema}
+              //validationSchema={SignupSchema}
               onSubmit={values => {
                 console.log(values);
               }}
+                                onSubmit={this.onSubmit}
+                                                          validateOnChange={false}
+                                                          validateOnBlur={false}
+                                                          validate={this.validate}
+                                                          enableReinitialize={true}
             >
                              {({ errors, handleChange, touched }) => (
                                 <Form>
@@ -182,3 +168,5 @@ validate(values) {
 }
 
 export default PlayerComponent
+
+
