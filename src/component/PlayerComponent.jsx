@@ -4,13 +4,30 @@ import TeamDataService from '../service/TeamDataService';
 import Select from 'react-select'
 import MyHeader from './MyHeader';
 import MyFooter from './MyFooter';
+import TextField from '@material-ui/core/TextField';
+import * as yup from "yup";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
 
         const options = [
           { value: '1', label: 'First Team' },
           { value: '2', label: 'Reserves' }
           ];
 
+          let SignupSchema = yup.object().shape({
+            firstName: yup.string().required("This field is required."),
+            password: yup
+              .string()
+              .min(6, "Password is too short.")
+              .max(20, "Password is too long.")
+              .required("This field is required.")
+          });
+
+
+
+
 class PlayerComponent extends Component {
+
 
     constructor(props) {
         super(props)
@@ -24,6 +41,7 @@ class PlayerComponent extends Component {
            this.validate = this.validate.bind(this)
           // this.refreshPlayers = this.refreshPlayers.bind(this)
     }
+
 
         componentDidMount() {
              // this.refreshPlayers();
@@ -98,16 +116,16 @@ validate(values) {
             <MyHeader/>
              <h3>Player</h3>
                 <div className="container">
-                    <Formik
-                        initialValues={{ playerId, playerName }}
-                           onSubmit={this.onSubmit}
-                              validateOnChange={false}
-                              validateOnBlur={false}
-                              validate={this.validate}
-                              enableReinitialize={true}
-                    >
-                        {
-                            (props) => (
+            <Formik
+              initialValues={{
+                firstName: ""
+              }}
+              validationSchema={SignupSchema}
+              onSubmit={values => {
+                console.log(values);
+              }}
+            >
+                             {({ errors, handleChange, touched }) => (
                                 <Form>
                                      <fieldset className="form-group">
                                         <label>Shirt Number</label>
@@ -130,11 +148,29 @@ validate(values) {
 
                                                         </div>
                                     </fieldset>
+                                    <div>
+                                     <TextField
+                                                        error={errors.firstName && touched.firstName}
+                                                        autoComplete="fname"
+                                                        name="firstName"
+                                                        variant="outlined"
+                                                        fullWidth
+                                                        onChange={handleChange}
+                                                        id="firstName"
+                                                        label="First Name"
+                                                        autoFocus
+                                                        helperText={
+                                                          errors.firstName && touched.firstName
+                                                            ? errors.firstName
+                                                            : null
+                                                        }
+                                                      />
+                                    </div>
                                     <button className="btn btn-success" type="submit">Save</button>
                                 </Form>
+                            //)
                             )
                         }
-
                     </Formik>
 
 
