@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React, { Component, Container} from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import TeamDataService from '../service/TeamDataService';
 import Select from 'react-select'
@@ -20,10 +20,12 @@ class PlayerComponent extends Component {
         this.state = {
             players: [],
             playerId: this.props.match.params.id,
-            playerName: ''
+            playerName: '',
+            teams: []
         }
            this.onSubmit = this.onSubmit.bind(this)
            this.validate = this.validate.bind(this)
+           this.handlethisChange = this.handlethisChange.bind(this)
           // this.refreshPlayers = this.refreshPlayers.bind(this)
     }
 
@@ -61,10 +63,15 @@ class PlayerComponent extends Component {
         console.log(values);
     }
 
+handlethisChange(values) {
 
+console.log("this is the handle change event ", values)
+
+}
 
 validate(values) {
     let errors = {}
+
     if (!values.firstName) {
                  errors.firstName = 'Enter a Player Name'
     }
@@ -74,14 +81,12 @@ validate(values) {
         errors.playerName = 'Enter at least 3 Characters in Player Name'
     }
         if (!values.playerId) {
-            errors.playeId = 'Enter a Player id'
+            errors.playerId = 'Enter a Player id'
         } else if (values.playerId<= 0) {
             errors.playerId = 'Enter a number greater than 0 in Player Id'
         }
 
-                if (!values.squad) {
-                    errors.squad = 'Enter a Squad'
-                }
+     console.log("Squad is : ", values.squad)
 
     return errors
 }
@@ -94,64 +99,73 @@ validate(values) {
             <div className="container">
             <MyHeader/>
              <h3>Player</h3>
+                      <div>
+                                              <p> </p>
+                                              </div>
                 <div className="container">
             <Formik
               initialValues={{
                 firstName: "",
                 playerName: "",
-                playerId: ""
+                playerId: "",
+                squad:[],
               }}
               //validationSchema={SignupSchema}
               onSubmit={values => {
                 console.log(values);
               }}
                                 onSubmit={this.onSubmit}
-                                                          validateOnChange={false}
-                                                          validateOnBlur={false}
-                                                          validate={this.validate}
-                                                          enableReinitialize={true}
+                                validateOnChange={false}
+                                validateOnBlur={false}
+                                validate={this.validate}
+                                enableReinitialize={true}
             >
                              {({ errors, handleChange, touched }) => (
-                                <Form>
-                                     <fieldset className="form-group">
-                                        <label>Shirt Number</label>
-                                        <Field className="form-control" type="text" name="playerId" />
-                                        <ErrorMessage name="playerId" component="div" className="alert alert-warning" />
-                                    </fieldset>
-                                    <fieldset className="form-group">
-                                        <label>Player Name</label>
-                                        <Field className="form-control" type="text" name="playerName" />
-                                        <ErrorMessage name="playerName" component="div" className="alert alert-warning" />
-                                    </fieldset>
-                                    <fieldset className="form-group">
+                                <Form spacing="10">
+                                <div>
+                                 <p> </p>
+                                 </div>
+                                <div spacing="10">
+                                        <TextField
+                                         name="playerId"
+                                          error={errors.playerId && touched.playerId}
+                                          label="Shirt Number"
+                                          variant="outlined"
+                                          fullWidth
+                                          onChange={handleChange}
+                                          id="playerId"
+                                          autoFocus
+                                          helperText={
+                                          errors.playerId && touched.playerId
+                                          ? errors.playerId : null}
+                                          />
+                                </div>
+                                <div><p> </p></div>
+                                        <TextField
+                                         name="playerName"
+                                          error={errors.playerName && touched.playerName}
+                                          label="Player Name"
+                                          variant="outlined"
+                                          fullWidth
+                                          onChange={handleChange}
+                                          id="playerName"
+                                          helperText={
+                                          errors.playerName && touched.playerName
+                                          ? errors.playerName : null}
+                                          />
+                                         <div>  <p> </p> </div>
                                                       <div>
-                                                        <label>Squad</label>
-
+                                                        <label>squad</label>
                                                         <Select className="form-control" type="text" name="squad"
                                                         isMulti
+                                                        id="squad"
+                                                        ref={this.selectRef}
+                                                        onChange={this.handlethisChange}
                                                         options = {options} />
-                                                        <ErrorMessage name="squad" component="div" className="alert alert-warning" />
-
                                                         </div>
-                                    </fieldset>
-                                    <div>
-                                     <TextField
-                                                        error={errors.firstName && touched.firstName}
-                                                        autoComplete="fname"
-                                                        name="firstName"
-                                                        variant="outlined"
-                                                        fullWidth
-                                                        onChange={handleChange}
-                                                        id="firstName"
-                                                        label="First Name"
-                                                        autoFocus
-                                                        helperText={
-                                                          errors.firstName && touched.firstName
-                                                            ? errors.firstName
-                                                            : null
-                                                        }
-                                                      />
-                                    </div>
+                                     <div>
+                                     <p> </p>
+                                     </div>
                                     <button className="btn btn-success" type="submit">Save</button>
                                 </Form>
                             //)
