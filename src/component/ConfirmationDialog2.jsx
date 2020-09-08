@@ -28,7 +28,7 @@ return (
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" type="submit" data-dismiss="modal" >Save changes</button>
+            <button type="button" class="btn btn-primary" type="submit">Save changes</button>
           </div>
         </div>
       </div>
