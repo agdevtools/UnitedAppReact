@@ -3,6 +3,7 @@ import Contact from './component/contact';
 import Homepage from "./component/HomePage";
 import PlayerComponent from './component/PlayerComponent';
 import TeamComponent from './component/TeamComponent';
+import ConfirmationDialog from './component/ConfirmationDialog';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class Routing extends Component {
@@ -12,8 +13,8 @@ class Routing extends Component {
     <>
         <Switch>
             <Route path="/" exact component={Homepage} />
-            <Route path="/team" exact component={TeamComponent} />
-            <Route path="/contact" component={Contact} />
+            <Route path="/team" exact component={TeamComponent}  />
+            <Route path="/contact" component={ConfirmationDialog} />
             <Route path="/player/:id" component={PlayerComponent} />
          </Switch>
     </>

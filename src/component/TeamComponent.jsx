@@ -23,6 +23,7 @@ class TeamComponent extends Component {
     }
 
     refreshPlayers() {
+        this.setState({ isFocused: true })
         TeamDataService.retrieveAllPlayers()
             .then(
                 response => {
