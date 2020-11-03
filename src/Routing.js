@@ -3,7 +3,7 @@ import Contact from './component/contact';
 import Homepage from "./component/HomePage";
 import PlayerComponent from './component/PlayerComponent';
 import TeamComponent from './component/TeamComponent';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 class Routing extends Component {
       render() {
