@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9da30f3a-c913-4ef9-916c-7e40abfb09e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/Loading.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Player.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/PlayerList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/context2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/MyHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/MyHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/PlayerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/PlayerList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context2.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,11 +14,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>retr</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">

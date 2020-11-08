@@ -2,6 +2,8 @@ import React from 'react'
 import Player from './Player'
 import Loading from './Loading'
 import { useGlobalContext } from '../context2'
+import MyHeader from './MyHeader';
+import MyFooter from './MyFooter';
 
 export default function PlayerList() {
   const { players, loading } = useGlobalContext()
@@ -16,13 +18,16 @@ export default function PlayerList() {
     )
   }
   return (
-    <section className='section'>
+    <div className="container">
+     <MyHeader/>
       <h2new className='section-title'>Meet the Players</h2new>
       <div className='cocktails-center'>
         {players.map((item) => {
           return <Player key={item.id} {...item} />
         })}
       </div>
-    </section>
+          <MyFooter/>
+    </div>
+
   )
 }
