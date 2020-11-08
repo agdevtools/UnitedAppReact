@@ -15,7 +15,7 @@ class MyHeader extends Component {
               <div class="header-right">
                       <Link to="/"> <a class="active"> Home </a> </Link>
                       <Link to="/team"> <a> Team </a> </Link>
-                      <Link to="/contact"> <a>Contact</a> </Link>
+                      <Link to="/playerlist"> <a>Players</a> </Link>
               </div>
         </div>
 
