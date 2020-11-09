@@ -1,15 +1,18 @@
 import React from 'react'
 import Player from './Player'
-import Loading from './Loading'
-import { useGlobalContext } from '../context2'
 import MyHeader from './MyHeader';
 import MyFooter from './MyFooter';
 
 export default function PlayerList() {
-  const { players, loading } = useGlobalContext()
-  if (loading) {
-    return <Loading/>
-  }
+
+        var players = [{id: "10", name: "Marcus Rashford",image:"https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/06/05/13/Marcus-Rashford.jpg",team:"Manchester United",position:"Striker"},
+                        {id: "18", name: "Bruno Fernandes",image:"https://d3vlf99qeg6bpx.cloudfront.net/content/uploads/2020/06/19223555/Bruno-Fernandes-Man-Utd-celebration.jpg",team:"Manchester United",position:"Midfielder"},
+                        {id: "10", name: "Marcus Rashford",image:"https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/06/05/13/Marcus-Rashford.jpg",team:"Manchester United",position:"Striker"},
+                        {id: "18", name: "Bruno Fernandes",image:"https://d3vlf99qeg6bpx.cloudfront.net/content/uploads/2020/06/19223555/Bruno-Fernandes-Man-Utd-celebration.jpg",team:"Manchester United",position:"Midfielder"},
+                        {id: "10", name: "Marcus Rashford",image:"https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/06/05/13/Marcus-Rashford.jpg",team:"Manchester United",position:"Striker"},
+                        {id: "18", name: "Bruno Fernandes",image:"https://d3vlf99qeg6bpx.cloudfront.net/content/uploads/2020/06/19223555/Bruno-Fernandes-Man-Utd-celebration.jpg",team:"Manchester United",position:"Midfielder"}
+                        ]
+
   if (players.length < 1) {
     return (
       <h2 className='section-title'>
@@ -27,7 +30,7 @@ export default function PlayerList() {
         })}
       </div>
           <MyFooter/>
-    </div>
+      </div>
 
   )
 }
