@@ -8,8 +8,8 @@ export default function Player({ image, name, id, team, position }) {
       </div>
       <div className='player-footer'>
         <h3>{name}</h3>
-        <h4>{position}</h4>
         <p>{team}</p>
+        <p>{position}</p>
         <Link to={`/player/${id}`} className='btn btn-primary btn-details'>
           details
         </Link>
