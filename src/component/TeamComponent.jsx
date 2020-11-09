@@ -29,7 +29,18 @@ class TeamComponent extends Component {
                     console.log(response);
                     this.setState({ players: response.data })
                 }
-            )
+
+            , (error) => {
+              console.log("there was an error defaulting to default player list");
+              this.setState({ players : [{playerId: "10", playerName: "Marcus Rashford"},
+                                         {playerId: "18", playerName: "Bruno Fernandes"},
+                                         {playerId: "2", playerName: "Victor Lindelof"},
+                                         {playerId: "7", playerName: "Edinson Cavani"},
+                                         {playerId: "17", playerName: "Fred"},
+                                         {playerId: "5", playerName: "Harry Maguire"}
+              ]})
+            }
+  )
     }
 
         deletePlayerClicked(id) {
