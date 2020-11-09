@@ -24,7 +24,7 @@ export default function PlayerList() {
     <div className="container">
      <MyHeader/>
       <h2new className='section-title'>Meet the Players</h2new>
-      <div className='cocktails-center'>
+      <div className='player-center'>
         {players.map((item) => {
           return <Player key={item.id} {...item} />
         })}

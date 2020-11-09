@@ -89,7 +89,7 @@ validate(values) {
                                         <label>playerName</label>
                                         <Field className="form-control" type="text" name="playerName" />
                                     </fieldset>
-                                    <button className="btn btn-success" type="submit">Save</button>
+                                    <button className="btn btn-primary btn-details" type="submit">Save</button>
                                 </Form>
                             )
                         }

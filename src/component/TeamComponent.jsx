@@ -77,15 +77,15 @@ class TeamComponent extends Component {
                                         <tr key={player.playerId}>
                                             <td>{player.playerId}</td>
                                             <td>{player.playerName}</td>
-                                            <td><button className="btn btn-success" onClick={() => this.updatePlayerClicked(player.playerId)}>Update</button></td>
-                                            <td><button className="btn btn-warning" onClick={() => this.deletePlayerClicked(player.playerId)}>Delete</button></td>
+                                            <td><button className="btn btn-primary btn-details" onClick={() => this.updatePlayerClicked(player.playerId)}>Update</button></td>
+                                            <td><button className="btn btn-primary btn-details" onClick={() => this.deletePlayerClicked(player.playerId)}>Delete</button></td>
                                         </tr>
                                 )
                             }
                         </tbody>
                     </table>
                       <div className="row">
-                                    <button className="btn btn-success" onClick={this.addPlayerClicked}>Add</button>
+                                    <button className="btn btn-primary btn-details" onClick={this.addPlayerClicked}>Add</button>
                                 </div>
                 </div>
                     <MyFooter/>
