@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const TEAM_API_URL = 'http://localhost:8080'
+const TEAM_API_URL = 'https://unitedappapi.herokuapp.com:8080'
 
 class TeamDataService {
 
