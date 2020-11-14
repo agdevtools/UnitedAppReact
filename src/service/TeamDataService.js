@@ -2,6 +2,8 @@ import axios from 'axios'
 
 const TEAM_API_URL = 'https://unitedappapi.herokuapp.com'
 
+//const TEAM_API_URL = 'http://localhost:8080'
+
 class TeamDataService {
 
     retrieveAllPlayers() {
@@ -21,7 +23,7 @@ class TeamDataService {
       }
 
       createPlayer(id, playerName, player) {
-          return axios.post(`${TEAM_API_URL}/team/${playerName}/player/${id}`, player);
+          return axios.post(`${TEAM_API_URL}/team`, player);
       }
 
 }
