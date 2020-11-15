@@ -11,7 +11,7 @@ class TeamDataService {
     }
 
     deletePlayer(id) {
-        return axios.delete(`${TEAM_API_URL}/team/{playerId}?playerId=${id}`);
+        return axios.delete(`${TEAM_API_URL}/team/${id}`);
     }
 
     retrievePlayer(id) {
