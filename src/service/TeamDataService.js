@@ -23,6 +23,7 @@ class TeamDataService {
       }
 
       createPlayer(id, playerName, player) {
+          console.log("Player payload is: ", player)
           return axios.post(`${TEAM_API_URL}/team`, player);
       }
 
