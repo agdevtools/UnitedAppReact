@@ -29,7 +29,18 @@ class TeamComponent extends Component {
                     console.log(response);
                     this.setState({ players: response.data })
                 }
-            )
+
+            , (error) => {
+              console.log("there was an error defaulting to default player list");
+              this.setState({ players : [{playerId: "10", playerName: "Marcus Rashford"},
+                                         {playerId: "18", playerName: "Bruno Fernandes"},
+                                         {playerId: "2", playerName: "Victor Lindelof"},
+                                         {playerId: "7", playerName: "Edinson Cavani"},
+                                         {playerId: "17", playerName: "Fred"},
+                                         {playerId: "5", playerName: "Harry Maguire"}
+              ]})
+            }
+  )
     }
 
         deletePlayerClicked(id) {
@@ -77,15 +88,15 @@ class TeamComponent extends Component {
                                         <tr key={player.playerId}>
                                             <td>{player.playerId}</td>
                                             <td>{player.playerName}</td>
-                                            <td><button className="btn btn-success" onClick={() => this.updatePlayerClicked(player.playerId)}>Update</button></td>
-                                            <td><button className="btn btn-warning" onClick={() => this.deletePlayerClicked(player.playerId)}>Delete</button></td>
+                                            <td><button className="btn btn-primary btn-details" onClick={() => this.updatePlayerClicked(player.playerId)}>Update</button></td>
+                                            <td><button className="btn btn-primary btn-details" onClick={() => this.deletePlayerClicked(player.playerId)}>Delete</button></td>
                                         </tr>
                                 )
                             }
                         </tbody>
                     </table>
                       <div className="row">
-                                    <button className="btn btn-success" onClick={this.addPlayerClicked}>Add</button>
+                                    <button className="btn btn-primary btn-details" onClick={this.addPlayerClicked}>Add</button>
                                 </div>
                 </div>
                     <MyFooter/>

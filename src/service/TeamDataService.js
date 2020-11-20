@@ -1,6 +1,8 @@
 import axios from 'axios'
 
-const TEAM_API_URL = 'http://localhost:8080'
+const TEAM_API_URL = 'https://unitedappapi.herokuapp.com'
+
+//const TEAM_API_URL = 'http://localhost:8080'
 
 class TeamDataService {
 
@@ -9,7 +11,7 @@ class TeamDataService {
     }
 
     deletePlayer(id) {
-        return axios.delete(`${TEAM_API_URL}/team/{playerId}?playerId=${id}`);
+        return axios.delete(`${TEAM_API_URL}/team/${id}`);
     }
 
     retrievePlayer(id) {
@@ -21,7 +23,8 @@ class TeamDataService {
       }
 
       createPlayer(id, playerName, player) {
-          return axios.post(`${TEAM_API_URL}/team/${playerName}/player/${id}`, player);
+          console.log("Player payload is: ", player)
+          return axios.post(`${TEAM_API_URL}/team`, player);
       }
 
 }
