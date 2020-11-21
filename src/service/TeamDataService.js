@@ -1,8 +1,16 @@
-import axios from 'axios'
+import axios from 'axios';
+import getEnv from '../environment';
 
-const TEAM_API_URL = 'https://unitedappapi.herokuapp.com'
-
+//const TEAM_API_URL = 'https://unitedappapi.herokuapp.com'
+let TEAM_API_URL = ""
 //const TEAM_API_URL = 'http://localhost:8080'
+
+if (getEnv() === "local") {
+    TEAM_API_URL = 'http://localhost:8080';
+}
+else  {
+TEAM_API_URL = 'https://unitedappapi.herokuapp.com'
+}
 
 class TeamDataService {
 
