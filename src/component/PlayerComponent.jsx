@@ -41,11 +41,10 @@ class PlayerComponent extends Component {
               TeamDataService.createPlayer(player.playerId, player.playerName, player)
                 .then(() => this.props.history.push('/team'))
         } else {
-              TeamDataService.updatePlayer(this.state.playerId, player.playerName, player)
+              player.playerId = this.props.match.params.id
+              TeamDataService.updatePlayer(player.playerId, player.playerName, player)
                 .then(() => this.props.history.push('/team'))
         }
-
-        console.log(values);
     }
 
 

@@ -1,9 +1,7 @@
 import axios from 'axios';
 import getEnv from '../environment';
 
-//const TEAM_API_URL = 'https://unitedappapi.herokuapp.com'
 let TEAM_API_URL = ""
-//const TEAM_API_URL = 'http://localhost:8080'
 
 if (getEnv() === "local") {
     TEAM_API_URL = 'http://localhost:8080';
@@ -27,7 +25,8 @@ class TeamDataService {
     }
 
       updatePlayer(id, playerName, player) {
-          return axios.put(`${TEAM_API_URL}/team/${playerName}/player/${id}`, player);
+          console.log("Player payload is: ", player)
+          return axios.put(`${TEAM_API_URL}/team`, player);
       }
 
       createPlayer(id, playerName, player) {
