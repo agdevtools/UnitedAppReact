@@ -27,7 +27,7 @@ class TeamComponent extends Component {
             .then(
                 response => {
                     console.log(response);
-                    this.setState({ players: response.data })
+                    this.setState({ players: response.data.team })
                 }
 
             , (error) => {
