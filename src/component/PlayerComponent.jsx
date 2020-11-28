@@ -1,8 +1,13 @@
-import React, { Component } from 'react'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import React, { Component, Container } from 'react'
+import { Formik, Form } from 'formik';
 import TeamDataService from '../service/TeamDataService';
 import MyHeader from './MyHeader';
 import MyFooter from './MyFooter';
+import TextField from '@material-ui/core/TextField';
+
+function action() {
+window.location.href = "/playerCreate"
+}
 
 class PlayerComponent extends Component {
 
@@ -13,7 +18,8 @@ class PlayerComponent extends Component {
             playerId: this.props.match.params.id,
             playerName: '',
             errors: "",
-            message: null
+            message: null,
+            showingAlert: false
         }
            this.onSubmit = this.onSubmit.bind(this)
            this.validate = this.validate.bind(this)
@@ -33,9 +39,10 @@ class PlayerComponent extends Component {
         }
 
     onSubmit(values) {
-
+        console.log("confirmed");
         this.setState({errors: ""});
         this.setState({message: null});
+
         let player = {
             playerId: values.playerId,
             playerName: values.playerName
@@ -56,38 +63,41 @@ class PlayerComponent extends Component {
               TeamDataService.updatePlayer(player.playerId, player.playerName, player)
                 .then(() => this.props.history.push('/team'))
         }
-    }
 
-
+}
     validate(values) {
 
     this.setState({errors: ""});
     console.log("These are the values passed in ", values);
+
     let errors = {}
 
-    for (let i=0; i < values.length; i++)
-    {
-    console.log("Target from error ", values[i].target);
-    if (values[i].target === "Player Id") {
+//     if (!values.playerId) {
+//          errors.playerId = 'Enter a Player Name'
+//          errors.playerName = 'Enter a Player Name'
+//     }
+
+   for (let i=0; i < values.length; i++) {
+   console.log("Target from error ", values[i].target);
+   if (values[i].target === "Player Id") {
         console.log("turning on errors for ",values[i].target)
         errors.playerId = true;
         errors.playerId = values[i].message;
-        }
+       }
    if (values[i].target === "Player Name") {
         errors.playerName = true;
         errors.playerName = values[i].message;
     }
 
-      this.setState({errors: errors});
+    this.setState({errors: errors});
 
-    }
-    return errors
-
-    }
+   }
+   return errors
+}
 
     render() {
 
-        let { playerId, playerName } = this.state
+//         let { playerId, playerName } = this.state
 
         return (
             <div className="container">
@@ -95,41 +105,51 @@ class PlayerComponent extends Component {
              <h3>Player</h3>
                 <div className="container">
                     <Formik
-                        initialValues={{ playerId, playerName }}
-                           onSubmit={this.onSubmit}
-                              validateOnChange={false}
-                              validateOnBlur={false}
-                              validate={this.validate}
-                              enableReinitialize={true}
+                        initialValues={{
+                            playerId: "-1",
+                            playerName: ""
+                            }}
+                                 onSubmit={this.onSubmit}
+                                 validateOnChange={false}
+                                 validateOnBlur={false}
+                                 enableReinitialize={true}
                     >
-                        {
-                            (props) => (
-                                <Form>
+                        {({ handleChange, touched }) => (
+                                                       <Form spacing="10">
+                                                       <div>
+                                                        <p> </p>
+                                                        </div>
+                                                       <div spacing="10">
+                                                  <TextField
+                                                        id="playerId"
+                                                        label="Shirt Number"
+                                                        name="playerId"
+                                                        error={this.state.errors.playerId && touched.playerId}
+                                                        variant="outlined"
+                                                        fullWidth
+                                                        onChange={handleChange}
+                                                        autoFocus
+                                                        helperText={
+                                                        this.state.errors.playerId && touched.playerId
+                                                        ? this.state.errors.playerId : null}
+                                                        />
+                                                                            </div>
+                                                                                        <div><p> </p></div>
 
-                                    <fieldset className="form-group">
-                                        <label>playerId</label>
-                                        <Field
-                                        id="playerId"
-                                        type="text"
-                                        name="playerId"
-                                        variant="outlined"
-                                        error={this.state.errors.playerId}
-                                        helperText={
-                                        this.state.errors.playerId
-                                        ? this.state.errors.playerId
-                                        : null
-                                        }/>
-                                    </fieldset>
-                                    <fieldset className="form-group">
-                                        <label>playerName</label>
-                                        <Field
-                                        className="form-control"
-                                        id="playerName"
-                                        variant="outlined"
-                                        type="text"
-                                        name="playerName"
-                                        error={this.state.errors.playerName}/>
-                                    </fieldset>
+                                        <TextField
+                                         name="playerName"
+                                          error={this.state.errors.playerName && touched.playerName}
+                                          label="Player Name"
+                                          variant="outlined"
+                                          fullWidth
+                                          onChange={handleChange}
+                                          id="playerName"
+                                          helperText={
+                                          this.state.errors.playerName && touched.playerName
+                                          ? this.state.errors.playerName : null}
+                                          />
+                                         <div>  <p> </p> </div>
+
                                     <button className="btn btn-primary btn-details" type="submit">Save</button>
                                 </Form>
                             )
