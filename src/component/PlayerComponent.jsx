@@ -18,10 +18,7 @@ class PlayerComponent extends Component {
             playerId: '',
             playerName: '',
             errors: "",
-            message: null,
-            showingAlert: false,
-            update2: false,
-            value: 'Enter text'
+            message: null
         }
            this.onSubmit = this.onSubmit.bind(this)
            this.validate = this.validate.bind(this)
@@ -76,29 +73,12 @@ class PlayerComponent extends Component {
 
 }
 
-      handleChange = (event) => {
-        this.setState({
-          value: event.target.value,
-        });
-      };
-
-     handleClick = () => {
-        this.setState({
-          value:'',
-        });
-      };
-
     validate(values) {
 
     this.setState({errors: ""});
     console.log("These are the values passed in ", values);
 
     let errors = {}
-
-//     if (!values.playerId) {
-//          errors.playerId = 'Enter a Player Name'
-//          errors.playerName = 'Enter a Player Name'
-//     }
 
    for (let i=0; i < values.length; i++) {
    console.log("Target from error ", values[i].target);
@@ -174,20 +154,7 @@ class PlayerComponent extends Component {
                                           />
                                          <div>  <p> </p> </div>
 
-                                                                     <TextField
-                                                                      id="testfield"
-                                                                      value={this.state.value}
-                                                                      disable='false'
-                                                                      onChange={this.handleChange}
-                                                                      label="test field"
-                                                                      variant="outlined"
-                                                                      fullWidth
-                                                                      onChange={handleChange}
-                                                                      />
-                                                                       <div>  <p> </p> </div>
-
                                     <button className="btn btn-primary btn-details" type="submit">Save</button>
-                                     <button onClick={this.handleClick}>Reset Text</button>
                                 </Form>
                             )
                         }
