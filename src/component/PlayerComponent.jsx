@@ -1,4 +1,4 @@
-import React, { Component, Container } from 'react'
+import React, { Component } from 'react'
 import { Formik, Form } from 'formik';
 import TeamDataService from '../service/TeamDataService';
 import MyHeader from './MyHeader';
@@ -15,23 +15,31 @@ class PlayerComponent extends Component {
         super(props)
 
         this.state = {
-            playerId: this.props.match.params.id,
+            playerId: '',
             playerName: '',
             errors: "",
             message: null,
-            showingAlert: false
+            showingAlert: false,
+            update2: false,
+            value: 'Enter text'
         }
            this.onSubmit = this.onSubmit.bind(this)
            this.validate = this.validate.bind(this)
     }
 
         componentDidMount() {
+        console.log("********* componentDidMount *********")
             // eslint-disable-next-line
-            if (this.state.id == -1) {
+            if (this.props.match.params.id == -1) {
+                console.log("**** CREATE *****")
+                this.state.value = "";
                 return
+            } else {
+            console.log("*** DOING THE ELSE *** ")
+                this.state.playerId = this.props.match.params.id;
             }
 
-            TeamDataService.retrievePlayer(this.state.playerId)
+            TeamDataService.retrievePlayer(this.props.match.params.id )
                 .then(response => this.setState({
                     playerId : response.data.playerId,
                     playerName: response.data.playerName
@@ -52,6 +60,7 @@ class PlayerComponent extends Component {
                  console.log("calling team service ");
                  TeamDataService.createPlayer(player.playerId, player.playerName, player).then(r => {
                  console.log("response is ",r);
+                 this.props.history.push('/team')
                  return r.team
                  })
                  .catch( error => {
@@ -59,12 +68,26 @@ class PlayerComponent extends Component {
                  console.log("this is the errors from unitedapp ", response.data.errorDetails)
                  this.validate(response.data.errorDetails)})
         } else {
+                console.log("I'm doing this playerId set")
               player.playerId = this.props.match.params.id
               TeamDataService.updatePlayer(player.playerId, player.playerName, player)
                 .then(() => this.props.history.push('/team'))
         }
 
 }
+
+      handleChange = (event) => {
+        this.setState({
+          value: event.target.value,
+        });
+      };
+
+     handleClick = () => {
+        this.setState({
+          value:'',
+        });
+      };
+
     validate(values) {
 
     this.setState({errors: ""});
@@ -97,8 +120,6 @@ class PlayerComponent extends Component {
 
     render() {
 
-//         let { playerId, playerName } = this.state
-
         return (
             <div className="container">
             <MyHeader/>
@@ -106,7 +127,7 @@ class PlayerComponent extends Component {
                 <div className="container">
                     <Formik
                         initialValues={{
-                            playerId: "-1",
+                            playerId: "",
                             playerName: ""
                             }}
                                  onSubmit={this.onSubmit}
@@ -123,6 +144,8 @@ class PlayerComponent extends Component {
                                                   <TextField
                                                         id="playerId"
                                                         label="Shirt Number"
+                                                        autoComplete="off"
+                                                        inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
                                                         name="playerId"
                                                         error={this.state.errors.playerId && touched.playerId}
                                                         variant="outlined"
@@ -141,6 +164,7 @@ class PlayerComponent extends Component {
                                           error={this.state.errors.playerName && touched.playerName}
                                           label="Player Name"
                                           variant="outlined"
+                                          autoComplete="off"
                                           fullWidth
                                           onChange={handleChange}
                                           id="playerName"
@@ -150,7 +174,20 @@ class PlayerComponent extends Component {
                                           />
                                          <div>  <p> </p> </div>
 
+                                                                     <TextField
+                                                                      id="testfield"
+                                                                      value={this.state.value}
+                                                                      disable='false'
+                                                                      onChange={this.handleChange}
+                                                                      label="test field"
+                                                                      variant="outlined"
+                                                                      fullWidth
+                                                                      onChange={handleChange}
+                                                                      />
+                                                                       <div>  <p> </p> </div>
+
                                     <button className="btn btn-primary btn-details" type="submit">Save</button>
+                                     <button onClick={this.handleClick}>Reset Text</button>
                                 </Form>
                             )
                         }
