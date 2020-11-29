@@ -6,16 +6,16 @@ import MyFooter from './MyFooter';
 import TextField from '@material-ui/core/TextField';
 
 function action() {
-window.location.href = "/playerCreate"
+window.location.href = "/playerCreatec"
 }
 
-class PlayerComponent extends Component {
+class PlayerComponentCreate extends Component {
 
     constructor(props) {
         super(props)
 
         this.state = {
-            playerId: this.props.match.params.id,
+            playerId: '',
             playerName: '',
             errors: "",
             message: null
@@ -27,20 +27,10 @@ class PlayerComponent extends Component {
         componentDidMount() {
         console.log("********* componentDidMount *********")
             // eslint-disable-next-line
-            if (this.props.match.params.id == -1) {
+
                 console.log("**** CREATE *****")
                 this.state.value = "";
-                return
-            } else {
-            console.log("*** DOING THE ELSE *** ")
-                this.state.playerId = this.props.match.params.id;
-            }
 
-            TeamDataService.retrievePlayer(this.props.match.params.id )
-                .then(response => this.setState({
-                    playerId : response.data.playerId,
-                    playerName: response.data.playerName
-                }))
         }
 
     onSubmit(values) {
@@ -53,14 +43,17 @@ class PlayerComponent extends Component {
             playerName: values.playerName
         }
 
-              console.log("I'm doing this playerId set")
-              player.playerId = this.props.match.params.id
-              TeamDataService.updatePlayer(player.playerId, player.playerName, player)
-                .then(() => this.props.history.push('/team'))
-                       .catch( error => {
-                       const response = error.response
-                       console.log("this is the errors from unitedapp ", response.data.errorDetails)
-                       this.validate(response.data.errorDetails)})
+                 console.log("calling team service ");
+                 TeamDataService.createPlayer(player.playerId, player.playerName, player).then(r => {
+                 console.log("response is ",r);
+                 this.props.history.push('/team')
+                 return r.team
+                 })
+                 .catch( error => {
+                 const response = error.response
+                 console.log("this is the errors from unitedapp ", response.data.errorDetails)
+                 this.validate(response.data.errorDetails)})
+
 }
 
     validate(values) {
@@ -113,7 +106,6 @@ class PlayerComponent extends Component {
                                                        <div spacing="10">
                                                   <TextField
                                                         id="playerId"
-                                                        value={this.props.match.params.id}
                                                         label="Shirt Number"
                                                         autoComplete="off"
                                                         inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
@@ -159,4 +151,4 @@ class PlayerComponent extends Component {
     }
 }
 
-export default PlayerComponent
+export default PlayerComponentCreate
