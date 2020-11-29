@@ -136,8 +136,9 @@ class PlayerComponent extends Component {
                                                         this.state.errors.playerId && touched.playerId
                                                         ? this.state.errors.playerId : null}
                                                         />
-                                                                            </div>
-                                                                                        <div><p> </p></div>
+                                       </div>
+                                       <div><p> </p>
+                                       </div>
 
                                         <TextField
                                          name="playerName"
