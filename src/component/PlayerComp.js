@@ -19,7 +19,7 @@ class PlayerComp extends Component {
             playerName: '',
             errors: "",
             message: null,
-            isDisabled: true
+            isDisabled: false
         }
            this.onSubmit = this.onSubmit.bind(this)
            this.validate = this.validate.bind(this)
@@ -30,10 +30,14 @@ class PlayerComp extends Component {
         // eslint-disable-next-line
         if (this.props.match.params.id == -1) {
             console.log("**** CREATE MODE *****")
-            this.setState({isDisabled : false})
         } else {
         console.log("*** UPDATE MODE *** ")
-            this.state.playerId = this.props.match.params.id;
+          //  this.state.playerId = this.props.match.params.id;
+            this.setState({
+                    playerId : this.props.match.params.id,
+                    isDisabled : true
+            })
+            this.state.isDisabled = true;
         }
 
         TeamDataService.retrievePlayer(this.props.match.params.id )
@@ -125,16 +129,19 @@ class PlayerComp extends Component {
                                <div spacing="10">
                                     <TextField
                                     id="playerId"
+                                    value={this.state.playerId}
                                     label="Shirt Number"
                                     autoComplete="off"
                                     disabled={this.state.isDisabled}
                                     inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+                                    InputLabelProps={{
+                                                shrink: true,
+                                              }}
                                     name="playerId"
                                     error={this.state.errors.playerId && touched.playerId}
                                     variant="outlined"
                                     fullWidth
                                     onChange={handleChange}
-                                    autoFocus
                                     helperText={
                                     this.state.errors.playerId && touched.playerId
                                     ? this.state.errors.playerId : null}
