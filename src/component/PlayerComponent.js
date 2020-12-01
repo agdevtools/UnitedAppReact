@@ -6,7 +6,7 @@ import MyFooter from './MyFooter';
 import TextField from '@material-ui/core/TextField';
 
 function action() {
-window.location.href = "/playerCreate"
+window.location.href = "/playerCreatec"
 }
 
 class PlayerComponent extends Component {
@@ -15,32 +15,36 @@ class PlayerComponent extends Component {
         super(props)
 
         this.state = {
-            playerId: this.props.match.params.id,
+            playerId: '',
             playerName: '',
             errors: "",
-            message: null
+            message: null,
+            isDisabled: false
         }
            this.onSubmit = this.onSubmit.bind(this)
            this.validate = this.validate.bind(this)
     }
 
-        componentDidMount() {
+    componentDidMount() {
         console.log("********* componentDidMount *********")
-            // eslint-disable-next-line
-            if (this.props.match.params.id == -1) {
-                console.log("**** CREATE *****")
-                this.state.value = "";
-                return
-            } else {
-            console.log("*** DOING THE ELSE *** ")
-                this.state.playerId = this.props.match.params.id;
-            }
+        // eslint-disable-next-line
+        if (this.props.match.params.id == -1) {
+            console.log("**** CREATE MODE *****")
+        } else {
+        console.log("*** UPDATE MODE *** ")
+          //  this.state.playerId = this.props.match.params.id;
+            this.setState({
+                    playerId : this.props.match.params.id,
+                    isDisabled : true
+            })
+            this.state.isDisabled = true;
+        }
 
-            TeamDataService.retrievePlayer(this.props.match.params.id )
-                .then(response => this.setState({
-                    playerId : response.data.playerId,
-                    playerName: response.data.playerName
-                }))
+        TeamDataService.retrievePlayer(this.props.match.params.id )
+            .then(response => this.setState({
+                playerId : response.data.team.playerId,
+                playerName: response.data.team.playerName
+            }))
         }
 
     onSubmit(values) {
@@ -52,37 +56,51 @@ class PlayerComponent extends Component {
             playerId: values.playerId,
             playerName: values.playerName
         }
+        console.log("player object is" , player)
+         if (this.props.match.params.id < 0) {
+         TeamDataService.createPlayer(player.playerId, player.playerName, player).then(r => {
+         console.log("response is ",r);
+         this.props.history.push('/team')
+         return r.team
+         })
+         .catch( error => {
+         const response = error.response
+         console.log("this is the errors from unitedapp ", response.data.errorDetails)
+         this.validate(response.data.errorDetails)})
+         }
+         else {
+        console.log("I'm doing this playerId set")
+        player.playerId = this.props.match.params.id
+        TeamDataService.updatePlayer(player.playerId, player.playerName, player)
+        .then(() => this.props.history.push('/team'))
+        .catch( error => {
+        const response = error.response
+        console.log("this is the errors from unitedapp ", response.data.errorDetails)
+        this.validate(response.data.errorDetails)})
+         }
 
-              console.log("I'm doing this playerId set")
-              player.playerId = this.props.match.params.id
-              TeamDataService.updatePlayer(player.playerId, player.playerName, player)
-               .then(() => this.props.history.push('/team'))
-               .catch( error => {
-               const response = error.response
-               console.log("this is the errors from unitedapp ", response.data.errorDetails)
-               this.validate(response.data.errorDetails)})
 }
 
     validate(values) {
 
-    this.setState({errors: ""});
-    console.log("These are the values passed in ", values);
+        this.setState({errors: ""});
+        console.log("These are the values passed in ", values);
 
-    let errors = {}
+        let errors = {}
 
-   for (let i=0; i < values.length; i++) {
-   console.log("Target from error ", values[i].target);
-   if (values[i].target === "Player Id") {
-        console.log("turning on errors for ",values[i].target)
-        errors.playerId = true;
-        errors.playerId = values[i].message;
+       for (let i=0; i < values.length; i++) {
+       console.log("Target from error ", values[i].target);
+        if (values[i].target === "Player Id") {
+            console.log("turning on errors for ",values[i].target)
+            errors.playerId = true;
+            errors.playerId = values[i].message;
        }
-   if (values[i].target === "Player Name") {
-        errors.playerName = true;
-        errors.playerName = values[i].message;
-    }
+       if (values[i].target === "Player Name") {
+            errors.playerName = true;
+            errors.playerName = values[i].message;
+        }
 
-    this.setState({errors: errors});
+        this.setState({errors: errors});
 
    }
    return errors
@@ -100,51 +118,50 @@ class PlayerComponent extends Component {
                             playerId: "",
                             playerName: ""
                             }}
-                                 onSubmit={this.onSubmit}
-                                 validateOnChange={false}
-                                 validateOnBlur={false}
-                                 enableReinitialize={true}
+                             onSubmit={this.onSubmit}
+                             validateOnChange={false}
+                             validateOnBlur={false}
+                             enableReinitialize={true}
                     >
                         {({ handleChange, touched }) => (
-                           <Form spacing="10">
-                           <div>
-                            <p> </p>
-                            </div>
-                           <div spacing="10">
-                              <TextField
+                               <Form spacing="10">
+                               <div> <p> </p></div>
+                               <div spacing="10">
+                                    <TextField
                                     id="playerId"
-                                    value={this.props.match.params.id}
+                                    value={this.state.playerId}
                                     label="Shirt Number"
                                     autoComplete="off"
+                                    disabled={this.state.isDisabled}
                                     inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+                                    InputLabelProps={{
+                                                shrink: true,
+                                              }}
                                     name="playerId"
                                     error={this.state.errors.playerId && touched.playerId}
                                     variant="outlined"
                                     fullWidth
                                     onChange={handleChange}
-                                    autoFocus
                                     helperText={
                                     this.state.errors.playerId && touched.playerId
                                     ? this.state.errors.playerId : null}
                                     />
-                                   </div>
-                                   <div><p> </p>
-                                   </div>
+                                       </div><div><p> </p> </div>
 
-                                <TextField
-                                 name="playerName"
-                                  error={this.state.errors.playerName && touched.playerName}
-                                  label="Player Name"
-                                  variant="outlined"
-                                  autoComplete="off"
-                                  fullWidth
-                                  onChange={handleChange}
-                                  id="playerName"
-                                  helperText={
-                                  this.state.errors.playerName && touched.playerName
-                                  ? this.state.errors.playerName : null}
-                                  />
-                                 <div>  <p> </p> </div>
+                                    <TextField
+                                     name="playerName"
+                                      error={this.state.errors.playerName && touched.playerName}
+                                      label="Player Name"
+                                      variant="outlined"
+                                      autoComplete="off"
+                                      fullWidth
+                                      onChange={handleChange}
+                                      id="playerName"
+                                      helperText={
+                                      this.state.errors.playerName && touched.playerName
+                                      ? this.state.errors.playerName : null}
+                                      />
+                                     <div>  <p> </p> </div>
 
                                     <button className="btn btn-primary btn-details" type="submit">Save</button>
                                 </Form>
