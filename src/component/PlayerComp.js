@@ -18,7 +18,8 @@ class PlayerComp extends Component {
             playerId: '',
             playerName: '',
             errors: "",
-            message: null
+            message: null,
+            isDisabled: true
         }
            this.onSubmit = this.onSubmit.bind(this)
            this.validate = this.validate.bind(this)
@@ -29,6 +30,7 @@ class PlayerComp extends Component {
         // eslint-disable-next-line
         if (this.props.match.params.id == -1) {
             console.log("**** CREATE MODE *****")
+            this.setState({isDisabled : false})
         } else {
         console.log("*** UPDATE MODE *** ")
             this.state.playerId = this.props.match.params.id;
@@ -36,8 +38,8 @@ class PlayerComp extends Component {
 
         TeamDataService.retrievePlayer(this.props.match.params.id )
             .then(response => this.setState({
-                playerId : response.data.playerId,
-                playerName: response.data.playerName
+                playerId : response.data.team.playerId,
+                playerName: response.data.team.playerName
             }))
         }
 
@@ -50,9 +52,8 @@ class PlayerComp extends Component {
             playerId: values.playerId,
             playerName: values.playerName
         }
-
+        console.log("player object is" , player)
          if (this.props.match.params.id < 0) {
-         console.log("calling team service ");
          TeamDataService.createPlayer(player.playerId, player.playerName, player).then(r => {
          console.log("response is ",r);
          this.props.history.push('/team')
@@ -126,6 +127,7 @@ class PlayerComp extends Component {
                                     id="playerId"
                                     label="Shirt Number"
                                     autoComplete="off"
+                                    disabled={this.state.isDisabled}
                                     inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
                                     name="playerId"
                                     error={this.state.errors.playerId && touched.playerId}

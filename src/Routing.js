@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Contact from './component/contact';
 import Homepage from "./component/HomePage";
 import PlayerComponent from './component/PlayerComponent';
+import PlayerComp from './component/PlayerComp';
 import PlayerComponentCreate from './component/PlayerComponentCreate';
 import PlayerList from './component/PlayerList';
 import TeamComponent from './component/TeamComponent';
@@ -17,8 +18,7 @@ class Routing extends Component {
             <Route path="/team" exact component={TeamComponent} />
             <Route path="/contact" component={Contact} />
             <Route path="/playerlist" component={PlayerList} />
-            <Route path="/player/:id" component={PlayerComponent} />
-            <Route path="/playerc" component={PlayerComponentCreate} />
+            <Route path="/player/:id" component={PlayerComp} />
          </Switch>
     </>
   </Router>

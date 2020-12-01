@@ -55,7 +55,7 @@ class TeamComponent extends Component {
         }
 
         addPlayerClicked() {
-            this.props.history.push(`/playerc`)
+            this.props.history.push(`/player/-1`)
         }
 
         updatePlayerClicked(id) {
