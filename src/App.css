@@ -1,12 +1,205 @@
-@import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css);
-
 /*
 ===============
 Variables
 ===============
 */
+@import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css);
+
+.header-img {
+  width: 100%;
+  height: 900px;
+  background: url('https://media.tacdn.com/media/attractions-splice-spp-674x446/07/38/d7/89.jpg');
+  background-size: cover;
+}
+
+table
+    {
+      border-collapse:collapse;
+      width:20%;
+      color:black;
+    }
+
+
+tr
+{
+  background-color:white;
+  color:black;
+}
+
+    table,th,td
+    {
+      border:2px solid white;
+    }
+
+h2 {
+  display: block;
+  color: #fff;
+  font-size: 5em;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  padding: 330px 300px;
+}
+
+h2a {
+  display: block;
+  color: #fff;
+  font-size: 3.5em;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  padding: 330px 300px;
+}
+
+h2b {
+  display: block;
+  color: #fff;
+  font-size: 0.5em;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h2c {
+  display: block;
+  color: black;
+  font-size: 1.5em;
+   text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h4 {
+  display: block;
+  color: #fff;
+  font-size: 0.3em;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .player-center {
+    grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
+  }
+}
+
+
+/*
+======
+Player
+======
+*/
+
+.player {
+  background: var(--mainWhite);
+  margin-bottom: 2rem;
+  box-shadow: var(--lightShadow);
+  transition: var(--mainTransition);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: var(--mainBorderRadius);
+}
+.player:hover {
+  box-shadow: var(--darkShadow);
+}
+.player img {
+  height: 20rem;
+  object-fit: cover;
+  border-top-left-radius: var(--mainBorderRadius);
+  border-top-right-radius: var(--mainBorderRadius);
+}
+.player-footer {
+  padding: 1.5rem;
+}
+.player-footer h3,
+.player-footer h4,
+.player-footer p {
+  margin-bottom: 0.3rem;
+}
+.player-footer h3 {
+  font-size: 2rem;
+}
+.player-footer p {
+  color: var(--darkGrey);
+  margin-bottom: 0.5rem;
+}
+
+/*
+======
+Players List
+======
+*/
+
+.section {
+  padding: 5rem 0;
+}
+.section-title {
+  font-size: 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+  margin-bottom: 3.5rem;
+  margin-top: 1rem;
+}
+.player-center {
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+  display: grid;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  /* align-items: start; */
+}
+
+/* THIS IS THE PROBLEM */
+img {
+  display: block;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
+  --primaryLightColor: #d4e6a5;
+  --primaryColor: #476a2e;
+  --primaryDarkColor: #c02c03;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBackground: #f1f5f8;
+  --mainOverlay: rgba(35, 10, 36, 0.4);
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #afafaf;
+  --mainRed: #bd0303;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 0.3rem;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --mainBorderRadius: 0.25rem;
+  --smallWidth: 85vw;
+  --maxWidth: 40rem;
+  --fullWidth: 1170px;
+  /* BELOW ADDED FOR NAV BAR ADD ON */
   /* dark shades of primary color*/
   --clr-primary-1: hsl(205, 86%, 17%);
   --clr-primary-2: hsl(205, 77%, 27%);
@@ -14,6 +207,7 @@ Variables
   --clr-primary-4: hsl(205, 63%, 48%);
   /* primary/main color */
   --clr-primary-5: hsl(205, 78%, 60%);
+  --clr-primary-5b: red;
   /* lighter shades of primary color */
   --clr-primary-6: hsl(205, 89%, 70%);
   --clr-primary-7: hsl(205, 90%, 76%);
@@ -164,11 +358,11 @@ nav {
   transform: rotate(90deg);
 }
 .logo {
-  height: 40px;
+  height: 80px;
 }
 .links a {
   color: var(--clr-grey-3);
-  font-size: 1rem;
+  font-size: 2rem;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
   display: block;
@@ -177,7 +371,7 @@ nav {
 }
 .links a:hover {
   background: var(--clr-primary-8);
-  color: var(--clr-primary-5);
+  color: var(--clr-primary-5b);
   padding-left: 1.5rem;
 }
 .social-icons {
@@ -189,7 +383,7 @@ nav {
   transition: var(--transition);
 }
 .show-container {
-  height: 10rem;
+  height: 15rem;
 }
 @media screen and (min-width: 800px) {
   .nav-center {
@@ -225,203 +419,12 @@ nav {
   }
   .social-icons a {
     margin: 0 0.5rem;
-    color: var(--clr-primary-5);
-    transition: var(--transition);
+    color: red;
+    transition: black;
   }
   .social-icons a:hover {
-    color: var(--clr-primary-7);
+    color: black);
   }
-}
-
-
-
-
-.header-img {
-  width: 100%;
-  height: 900px;
-  background: url('https://media.tacdn.com/media/attractions-splice-spp-674x446/07/38/d7/89.jpg');
-  background-size: cover;
-}
-
-table
-    {
-      border-collapse:collapse;
-      width:20%;
-      color:black;
-    }
-
-
-tr
-{
-  background-color:white;
-  color:black;
-}
-
-    table,th,td
-    {
-      border:2px solid white;
-    }
-
-.menu {
-  float: right;
-}
-.menu ul {
-  list-style: none;
-  padding: 0
-}
-
-h2 {
-  display: block;
-  color: #fff;
-  font-size: 5em;
-  text-align: center;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-  padding: 330px 300px;
-}
-
-h2a {
-  display: block;
-  color: #fff;
-  font-size: 3.5em;
-  text-align: center;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-  padding: 330px 300px;
-}
-
-h2b {
-  display: block;
-  color: #fff;
-  font-size: 0.5em;
-  text-align: center;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-
-h4 {
-  display: block;
-  color: #fff;
-  font-size: 0.3em;
-  text-align: center;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-}
-
-
-@media screen and (min-width: 576px) {
-  .player-center {
-    grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
-  }
-}
-
-/*
-======
-Player
-======
-*/
-
-.player {
-  background: var(--mainWhite);
-  margin-bottom: 2rem;
-  box-shadow: var(--lightShadow);
-  transition: var(--mainTransition);
-  display: grid;
-  grid-template-rows: auto 1fr;
-  border-radius: var(--mainBorderRadius);
-}
-.player:hover {
-  box-shadow: var(--darkShadow);
-}
-.player img {
-  height: 20rem;
-  object-fit: cover;
-  border-top-left-radius: var(--mainBorderRadius);
-  border-top-right-radius: var(--mainBorderRadius);
-}
-.player-footer {
-  padding: 1.5rem;
-}
-.player-footer h3,
-.player-footer h4,
-.player-footer p {
-  margin-bottom: 0.3rem;
-}
-.player-footer h3 {
-  font-size: 2rem;
-}
-.player-footer p {
-  color: var(--darkGrey);
-  margin-bottom: 0.5rem;
-}
-
-/*
-======
-Players List
-======
-*/
-
-.section {
-  padding: 5rem 0;
-}
-.section-title {
-  font-size: 2rem;
-  text-transform: capitalize;
-  letter-spacing: var(--mainSpacing);
-  text-align: center;
-  margin-bottom: 3.5rem;
-  margin-top: 1rem;
-}
-.player-center {
-  width: var(--smallWidth);
-  margin: 0 auto;
-  max-width: var(--fullWidth);
-  display: grid;
-  row-gap: 2rem;
-  column-gap: 2rem;
-  /* align-items: start; */
-}
-
-img {
-  width: 100%;
-  display: block;
-}
-
-.header img {
-  width: 15%;
-  display: block;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primaryLightColor: #d4e6a5;
-  --primaryColor: #476a2e;
-  --primaryDarkColor: #c02c03;
-  --mainWhite: #fff;
-  --offWhite: #f7f7f7;
-  --mainBackground: #f1f5f8;
-  --mainOverlay: rgba(35, 10, 36, 0.4);
-  --mainBlack: #222;
-  --mainGrey: #ececec;
-  --darkGrey: #afafaf;
-  --mainRed: #bd0303;
-  --mainTransition: all 0.3s linear;
-  --mainSpacing: 0.3rem;
-  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-  --mainBorderRadius: 0.25rem;
-  --smallWidth: 85vw;
-  --maxWidth: 40rem;
-  --fullWidth: 1170px;
 }
 
 /*

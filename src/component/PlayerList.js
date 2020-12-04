@@ -1,6 +1,6 @@
 import React from 'react'
 import Player from './Player'
-import MyHeader from './MyHeader';
+import Navbar from './NavBar';
 import MyFooter from './MyFooter';
 
 export default function PlayerList() {
@@ -22,7 +22,6 @@ export default function PlayerList() {
   }
   return (
     <div className="container">
-     <MyHeader/>
       <h2new className='section-title'>Meet the Players</h2new>
       <div className='player-center'>
         {players.map((item) => {

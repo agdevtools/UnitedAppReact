@@ -4,7 +4,7 @@ export default function Player({ image, name, id, team, position }) {
   return (
     <article className='player'>
       <div className='img-container'>
-        <img src={image} alt={name} />
+        <img src={image} alt={name} width="100%"/>
       </div>
       <div className='player-footer'>
         <h3>{name}</h3>
