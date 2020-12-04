@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TeamDataService from '../service/TeamDataService';
 import MyHeader from './MyHeader';
 import MyFooter from './MyFooter';
+import Navbar from './NavBar';
 
 class TeamComponent extends Component {
 
@@ -67,7 +68,7 @@ class TeamComponent extends Component {
         return (
                 <div className="container">
 
-                <MyHeader/>
+                <Navbar/>
                 <h3>First Team Squad 19/20 </h3>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
 
