@@ -15,7 +15,6 @@ Variables
 table
     {
       border-collapse:collapse;
-      width:20%;
       color:black;
     }
 
@@ -26,7 +25,7 @@ tr
   color:black;
 }
 
-    table,th,td
+  th,td
     {
       border:2px solid white;
     }
@@ -263,6 +262,7 @@ body {
 }
 ul {
   list-style-type: none;
+  padding-right: 0.5rem;
 }
 a {
   text-decoration: none;
@@ -376,6 +376,7 @@ nav {
 }
 .social-icons {
   display: none;
+  padding-right: 1.5rem
 }
 .links-container {
   height: 0;
@@ -387,15 +388,14 @@ nav {
 }
 @media screen and (min-width: 800px) {
   .nav-center {
-    max-width: 1170px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
   }
   .nav-header {
-    padding: 0;
+    padding: 0.5;
   }
   .nav-toggle {
     display: none;
@@ -483,4 +483,9 @@ Buttons
 .btn-details:hover {
   background: var(--primaryLightColor);
   border-color: var(--primaryLightColor);
+}
+
+.container {
+padding-left: 0rem;
+padding-left: 0rem;
 }

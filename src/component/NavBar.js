@@ -22,6 +22,7 @@ const Navbar = () => {
     }
   }, [showLinks]);
   return (
+    <div className="container">
     <nav>
       <div className='nav-center'>
         <div className='nav-header'>
@@ -36,7 +37,6 @@ const Navbar = () => {
               const { id, url, text } = link;
               return (
                 <li key={id}>
-
                    <Link to={url}> <a> {text} </a> </Link>
                 </li>
               );
@@ -48,13 +48,15 @@ const Navbar = () => {
             const { id, url, icon } = socialIcon;
             return (
               <li key={id}>
-                <a href={url}>{icon}</a>
+                <a href={url}> {icon} </a>
               </li>
             );
           })}
         </ul>
       </div>
+
     </nav>
+   </div>
   );
 };
 

@@ -67,12 +67,15 @@ class TeamComponent extends Component {
         render() {
         return (
                 <div className="container">
-
                 <Navbar/>
-                <h3>First Team Squad 19/20 </h3>
+                <div className="container">
+                <p></p>
+                <h3>First Team Squad 20/21 </h3>
+                </div>
+                <div> <p></p> </div>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
 
-                <div className="container">
+                <div className="container" background="white">
                     <table className="table" >
                         <thead>
                             <tr>
@@ -96,7 +99,7 @@ class TeamComponent extends Component {
                             }
                         </tbody>
                     </table>
-                      <div className="row">
+                      <div left-padding="15px">
                                     <button className="btn btn-primary btn-details" onClick={this.addPlayerClicked}>Add</button>
                                 </div>
                 </div>
