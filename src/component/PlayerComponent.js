@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Formik, Form } from 'formik';
 import TeamDataService from '../service/TeamDataService';
-import MyHeader from './MyHeader';
+import Navbar from './NavBar';
 import MyFooter from './MyFooter';
 import TextField from '@material-ui/core/TextField';
 
@@ -110,8 +110,11 @@ class PlayerComponent extends Component {
 
         return (
             <div className="container">
-            <MyHeader/>
+            <Navbar/>
+              <div className="container">
+              <p> </p>
              <h3>Player</h3>
+             </div>
                 <div className="container">
                     <Formik
                         initialValues={{

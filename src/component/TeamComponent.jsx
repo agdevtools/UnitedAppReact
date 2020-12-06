@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TeamDataService from '../service/TeamDataService';
-import MyHeader from './MyHeader';
 import MyFooter from './MyFooter';
 import Navbar from './NavBar';
 
