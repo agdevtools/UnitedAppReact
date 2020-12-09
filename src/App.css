@@ -236,9 +236,13 @@ img {
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  --max-width: 1170px;
   --fixed-width: 620px;
+    --smallWidth: 85vw;
+    --maxWidth: 40rem;
+    --fullWidth: 1170px;
 }
+
+
 /*
 ===============
 Global Styles
@@ -335,8 +339,12 @@ Navbar
 ===============
 */
 nav {
-  background: var(--clr-white);
-  box-shadow: var(--light-shadow);
+  background: var(--mainWhite);
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--primaryColor);
+  box-shadow: var(--lightShadow);
 }
 .nav-header {
   display: flex;
@@ -357,7 +365,7 @@ nav {
   transform: rotate(90deg);
 }
 .logo {
-  height: 80px;
+  height: 70px;
 }
 .links a {
   color: red;
@@ -386,13 +394,14 @@ nav {
   height: 15rem;
 }
 @media screen and (min-width: 800px) {
-  .nav-center {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+}
   .nav-header {
     padding: 0.5;
   }
