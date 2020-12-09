@@ -340,7 +340,7 @@ Navbar
 */
 nav {
   background: var(--mainWhite);
-  height: 5rem;
+  height: 7rem;
   display: flex;
   align-items: center;
   border-bottom: 2px solid var(--primaryColor);
@@ -365,7 +365,7 @@ nav {
   transform: rotate(90deg);
 }
 .logo {
-  height: 70px;
+  height: 80px;
 }
 .links a {
   color: red;
