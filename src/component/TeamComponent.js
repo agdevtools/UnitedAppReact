@@ -32,12 +32,12 @@ class TeamComponent extends Component {
 
             , (error) => {
               console.log("there was an error defaulting to default player list");
-              this.setState({ players : [{playerId: "10", playerName: "Marcus Rashford"},
-                                         {playerId: "18", playerName: "Bruno Fernandes"},
-                                         {playerId: "2", playerName: "Victor Lindelof"},
-                                         {playerId: "7", playerName: "Edinson Cavani"},
-                                         {playerId: "17", playerName: "Fred"},
-                                         {playerId: "5", playerName: "Harry Maguire"}
+              this.setState({ players : [{playerId: "10", playerName: "Marcus Rashford", playerPosition: "Striker"},
+                                         {playerId: "18", playerName: "Bruno Fernandes", playerPosition: "Midfield"},
+                                         {playerId: "2", playerName: "Victor Lindelof", playerPosition: "Defender"},
+                                         {playerId: "7", playerName: "Edinson Cavani", playerPosition: "Striker"},
+                                         {playerId: "17", playerName: "Fred", playerPosition: "Midfield"},
+                                         {playerId: "5", playerName: "Harry Maguire", playerPosition: "Defender"}
               ]})
             }
   )
@@ -80,6 +80,7 @@ class TeamComponent extends Component {
                             <tr>
                                 <th>Player Number</th>
                                 <th>Player Name</th>
+                                <th>Player Position</th>
                                 <th> </th>
                                 <th> </th>
                             </tr>
@@ -91,6 +92,7 @@ class TeamComponent extends Component {
                                         <tr key={player.playerId}>
                                             <td>{player.playerId}</td>
                                             <td>{player.playerName}</td>
+                                            <td>{player.playerPosition}</td>
                                             <td><button className="btn btn-primary btn-details" onClick={() => this.updatePlayerClicked(player.playerId)}>Update</button></td>
                                             <td><button className="btn btn-primary btn-details" onClick={() => this.deletePlayerClicked(player.playerId)}>Delete</button></td>
                                         </tr>

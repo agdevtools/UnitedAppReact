@@ -24,12 +24,12 @@ class TeamDataService {
         return axios.get(`${TEAM_API_URL}/team/${id}`);
     }
 
-      updatePlayer(id, playerName, player) {
+      updatePlayer(id, playerName, playerPosition, player) {
           console.log("Player payload is: ", player)
           return axios.put(`${TEAM_API_URL}/team`, player);
       }
 
-      createPlayer(id, playerName, player) {
+      createPlayer(id, playerName, playerPosition, player) {
           console.log("Player payload is: ", player)
           return axios.post(`${TEAM_API_URL}/team`, player);
       }

@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Select from 'react-select';
 import { Formik, Form } from 'formik';
 import TeamDataService from '../service/TeamDataService';
 import Navbar from './NavBar';
@@ -9,6 +10,17 @@ function action() {
 window.location.href = "/playerCreatec"
 }
 
+//Import React and Select
+
+let playerP = "";
+
+const position = [
+  { value: 'goalkeeper', label: 'Goalkeeper' },
+  { value: 'defender', label: 'Defender' },
+  { value: 'midfield', label: 'Midfielder' },
+  { value: 'striker', label: 'Striker' }
+];
+
 class PlayerComponent extends Component {
 
     constructor(props) {
@@ -17,12 +29,14 @@ class PlayerComponent extends Component {
         this.state = {
             playerId: '',
             playerName: '',
+            playerPosition : '',
             errors: "",
             message: null,
             isDisabled: false
         }
            this.onSubmit = this.onSubmit.bind(this)
            this.validate = this.validate.bind(this)
+           PlayerComponent.handleReactSelectChange = PlayerComponent.handleReactSelectChange.bind(this)
     }
 
     componentDidMount() {
@@ -54,11 +68,12 @@ class PlayerComponent extends Component {
 
         let player = {
             playerId: values.playerId,
-            playerName: values.playerName
+            playerName: values.playerName,
+            playerPosition : playerP
         }
         console.log("player object is" , player)
          if (this.props.match.params.id < 0) {
-         TeamDataService.createPlayer(player.playerId, player.playerName, player).then(r => {
+         TeamDataService.createPlayer(player.playerId, player.playerName, player.playerPosition, player).then(r => {
          console.log("response is ",r);
          this.props.history.push('/team')
          return r.team
@@ -71,7 +86,7 @@ class PlayerComponent extends Component {
          else {
         console.log("I'm doing this playerId set")
         player.playerId = this.props.match.params.id
-        TeamDataService.updatePlayer(player.playerId, player.playerName, player)
+        TeamDataService.updatePlayer(player.playerId, player.playerName, player.playerPosition, player)
         .then(() => this.props.history.push('/team'))
         .catch( error => {
         const response = error.response
@@ -80,6 +95,11 @@ class PlayerComponent extends Component {
          }
 
 }
+
+    static handleReactSelectChange(selectedPosition) {
+            playerP = selectedPosition.label;
+            console.log("value selected is ", playerP)
+    }
 
     validate(values) {
 
@@ -108,11 +128,22 @@ class PlayerComponent extends Component {
 
     render() {
 
+            const customStyles = {
+              control: base => ({
+                ...base,
+                height: 60,
+                minHeight: 60
+              })
+            };
+
+
+
         return (
             <div className="container">
             <Navbar/>
               <div className="container">
               <p> </p>
+              <div>  <p> </p> <br></br> </div>
              <h3>Player</h3>
              </div>
                 <div className="container">
@@ -165,8 +196,17 @@ class PlayerComponent extends Component {
                                       ? this.state.errors.playerName : null}
                                       />
                                      <div>  <p> </p> </div>
-
+                                      <Select
+                                      options = {position}
+                                      styles={customStyles}
+                                      onChange={PlayerComponent.handleReactSelectChange}
+                                      />
+                                      <div>  <p> </p> </div>
+                                      <div><br></br>
+                                      <p> </p>
+                                      </div>
                                     <button className="btn btn-primary btn-details" type="submit">Save</button>
+
                                 </Form>
                             )
                         }
