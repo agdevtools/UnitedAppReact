@@ -190,6 +190,7 @@ img {
   --mainGrey: #ececec;
   --darkGrey: #afafaf;
   --mainRed: #bd0303;
+  --manutdred: #c70101;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.3rem;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -368,7 +369,7 @@ nav {
   height: 80px;
 }
 .links a {
-  color: red;
+  color: var(--manutdred);
   font-size: 1.5rem;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
@@ -427,7 +428,7 @@ nav {
   }
   .social-icons a {
     margin: 0 0.5rem;
-    color: red;
+    color: var(--manutdred);
     transition: black;
   }
   .social-icons a:hover {
@@ -445,7 +446,7 @@ Buttons
 .btn-primary {
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
-  color: var(--primaryColor);
+  color: #c70101;
   border: 2px solid var(--primaryColor);
   padding: 0.45rem 0.8rem;
   display: inline-block;
@@ -470,7 +471,7 @@ Buttons
   color: var(--primaryColor);
 }
 .btn-primary {
-  background: var(--primaryColor);
+  background: var(--manutdred);
   color: var(--mainWhite);
   border-color: transparent;
 }
