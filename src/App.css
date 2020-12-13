@@ -339,9 +339,17 @@ p {
 Navbar
 ===============
 */
+navtop {
+  background: black;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--lightShadow);
+}
+
 nav {
-  background: var(--mainWhite);
-  height: 7rem;
+  background: var(--manutdred);
+  height: 5.5rem;
   display: flex;
   align-items: center;
   border-bottom: 2px solid var(--primaryColor);
@@ -369,7 +377,7 @@ nav {
   height: 80px;
 }
 .links a {
-  color: var(--manutdred);
+  color: var(--white);
   font-size: 1.5rem;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
@@ -379,7 +387,7 @@ nav {
 }
 .links a:hover {
   background: var(--clr-primary-8);
-  color: black;
+  color: var(--white);
   padding-left: 1.5rem;
 }
 .social-icons {
@@ -428,7 +436,7 @@ nav {
   }
   .social-icons a {
     margin: 0 0.5rem;
-    color: var(--manutdred);
+    color: var(--white);
     transition: black;
   }
   .social-icons a:hover {

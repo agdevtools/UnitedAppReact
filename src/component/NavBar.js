@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { links, social } from './data';
-import logo from './logo2.png';
+import logo from './logo3.png';
 import {
   Link
 } from "react-router-dom";
@@ -23,6 +23,7 @@ const Navbar = () => {
   }, [showLinks]);
   return (
     <div className="container">
+    <navtop></navtop>
     <nav>
       <div className='nav-center'>
         <div className='nav-header'>
@@ -54,7 +55,6 @@ const Navbar = () => {
           })}
         </ul>
       </div>
-
     </nav>
    </div>
   );
