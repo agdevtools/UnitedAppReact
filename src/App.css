@@ -20,6 +20,16 @@ Variables
   background-size: cover;
 }
 
+.boxing {
+box-sizing : content-box;
+margin-bottom : 2rem;
+margin-left : 2rem;
+margin-right : 2rem;
+padding : 1rem;
+background-color : white;
+}
+
+
 table
     {
       border-collapse:collapse;
@@ -355,7 +365,6 @@ navtop {
   width: 100%;
   box-shadow: var(--lightShadow);
       margin: 0;
-      padding: 0;
 
       /* notice below: */
       position: fixed;
@@ -372,9 +381,6 @@ nav {
   border-bottom: 2px solid var(--primaryColor);
   box-shadow: var(--lightShadow);
       margin: 0;
-      padding: 0;
-
-      /* notice below: */
       position: fixed;
            left: 0;
             right: 0;
@@ -532,3 +538,12 @@ padding-left: 0rem;
 padding-left: 0rem;
 }
 
+.navcontainer {
+padding-bottom: 100px;
+}
+
+.teamcontainer {
+padding-top: 50px;
+padding-left: 0rem;
+padding-left: 0rem;
+}

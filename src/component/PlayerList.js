@@ -22,13 +22,20 @@ export default function PlayerList() {
   }
   return (
     <div className="container">
+    <div>
     <Navbar/>
+    </div>
     <div className="container">
     <p></p>
       <h2new className='section-title'> Meet the Players</h2new>
     </div>
       <div> <p></p> </div>
-    <div className="container">
+    <div className="teamcontainer">
+        <div className="container">
+        <p></p>
+          <h2new className='section-title'> Meet the Players</h2new>
+        </div>
+          <div> <p></p> </div>
       <div className='player-center'>
         {players.map((item) => {
           return <Player key={item.id} {...item} />

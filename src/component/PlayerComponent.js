@@ -146,7 +146,11 @@ class PlayerComponent extends Component {
               <div>  <p> </p> <br></br> </div>
              <h3>Player</h3>
              </div>
+                <div className="teamcontainer">
                 <div className="container">
+                              <div>  <p> </p> <br></br> </div>
+                             <h3>Player</h3>
+                             </div>
                     <Formik
                         initialValues={{
                             playerId: "",

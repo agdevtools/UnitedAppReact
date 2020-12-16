@@ -66,15 +66,22 @@ class TeamComponent extends Component {
         render() {
         return (
                 <div className="container">
+                <div>
                 <Navbar/>
-                <div className="container">
+                </div>
+                <div>
                 <p></p>
                 <h3>First Team Squad 20/21 </h3>
                 </div>
                 <div> <p></p> </div>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
 
-                <div className="container" background="white">
+                <div className="teamcontainer" background="white">
+                                <div className="container">
+                                <p></p>
+                                <h3>First Team Squad 20/21 </h3>
+                                </div>
+                                <div> <p></p> </div>
                     <table className="table" >
                         <thead>
                             <tr>
