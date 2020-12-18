@@ -16,6 +16,10 @@ class TeamDataService {
         return axios.get(`${TEAM_API_URL}/team`);
     }
 
+    getLeague() {
+            return axios.get(`${TEAM_API_URL}/team/league`);
+    }
+
     deletePlayer(id) {
         return axios.delete(`${TEAM_API_URL}/team/${id}`);
     }

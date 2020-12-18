@@ -15,13 +15,18 @@ export const links = [
     id: 3,
     url: '/playerlist',
     text: 'Players',
-  }
+  },
+     {
+       id: 4,
+       url: '/tables',
+       text: 'Tables',
+     }
 ];
 
 export const social = [
   {
     id: 1,
-    url: 'https://www.twitter.com',
+    url: 'https://www.facebook.com',
     icon: <FaFacebook />,
   },
   {
@@ -31,7 +36,7 @@ export const social = [
   },
   {
     id: 3,
-    url: 'https://www.twitter.com',
+    url: 'https://www.linkedin.com',
     icon: <FaLinkedin />,
   },
   {
