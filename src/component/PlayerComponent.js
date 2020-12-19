@@ -5,6 +5,7 @@ import TeamDataService from '../service/TeamDataService';
 import Navbar from './NavBar';
 import MyFooter from './MyFooter';
 import TextField from '@material-ui/core/TextField';
+import HeaderText from './HeaderText';
 
 function action() {
 window.location.href = "/playerCreatec"
@@ -143,10 +144,7 @@ class PlayerComponent extends Component {
             <Navbar/>
                 <div className="teamcontainer">
                 <div className="boxing">
-                <div className="container">
-                <p></p>
-                             <h2new className='section-title'> Player </h2new>
-                             </div>
+                     <HeaderText text="Player"/>
                     <Formik
                         initialValues={{
                             playerId: "",

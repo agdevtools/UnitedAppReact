@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TeamDataService from '../service/TeamDataService';
 import MyFooter from './MyFooter';
 import Navbar from './NavBar';
+import HeaderText from './HeaderText';
 
 class TableComponent extends Component {
 
@@ -32,20 +33,14 @@ class TableComponent extends Component {
   )
     }
 
-
-
-
         render() {
         return (
                 <div className="container">
-                <div>
                 <Navbar/>
-                </div>
                 <div className="teamcontainer" background="white">
                                 <div className="boxing">
                                 <div className="container">
-                                <p></p>
-                                <h2new className='section-title'> Current Standings </h2new>
+                                <HeaderText text="Current Standings"/>
                                 </div>
                                 <div> <p></p> </div>
                     <table className="table" >

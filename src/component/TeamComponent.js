@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TeamDataService from '../service/TeamDataService';
 import MyFooter from './MyFooter';
 import Navbar from './NavBar';
+import HeaderText from './HeaderText';
 
 class TeamComponent extends Component {
 
@@ -66,17 +67,10 @@ class TeamComponent extends Component {
         render() {
         return (
                 <div className="container">
-                <div>
                 <Navbar/>
-                </div>
-                {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
-
                 <div className="teamcontainer" background="white">
-                                <div className="boxing">
-                                <div className="container">
-                                <h2new className='section-title'> First Team Squad</h2new>
-                                </div>
-                                <div> <p></p> </div>
+                      <div className="boxing">
+                            <HeaderText text="First Team Squad"/>
                     <table className="table" >
                         <thead>
                             <tr>

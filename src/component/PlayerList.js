@@ -2,6 +2,7 @@ import React from 'react'
 import Player from './PlayerCard'
 import Navbar from './NavBar';
 import MyFooter from './MyFooter';
+import HeaderText from './HeaderText';
 
 export default function PlayerList() {
 
@@ -26,11 +27,8 @@ export default function PlayerList() {
     <Navbar/>
     </div>
     <div className="teamcontainer">
-        <div className="container">
-        <p></p>
-          <h2new className='section-title'> Meet the Players</h2new>
-        </div>
           <div> <p></p> </div>
+        <HeaderText text="Player"/>
       <div className='player-center'>
         {players.map((item) => {
           return <Player key={item.id} {...item} />

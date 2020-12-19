@@ -23,7 +23,7 @@ const Navbar = () => {
   }, [showLinks]);
   return (
     <div className="container">
-    <navtop></navtop>
+    <navtop/>
     <nav>
       <div className='nav-center'>
         <div className='nav-header'>
@@ -56,6 +56,7 @@ const Navbar = () => {
         </ul>
       </div>
     </nav>
+    <div> <p></p> </div>
    </div>
   );
 };
