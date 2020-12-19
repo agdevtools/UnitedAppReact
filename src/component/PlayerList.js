@@ -28,7 +28,7 @@ export default function PlayerList() {
     </div>
     <div className="teamcontainer">
           <div> <p></p> </div>
-        <HeaderText text="Player"/>
+        <HeaderText text="Meet the Players"/>
       <div className='player-center'>
         {players.map((item) => {
           return <Player key={item.id} {...item} />

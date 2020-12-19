@@ -23,8 +23,8 @@ Variables
 .boxing {
 box-sizing : content-box;
 margin-bottom : 2rem;
-margin-left : 2rem;
-margin-right : 2rem;
+margin-left : 0rem;
+margin-right : 0rem;
 padding : 1rem;
 /* background-color :  #f7f7f7; off-white */
 background-color :  white;
