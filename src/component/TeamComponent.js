@@ -69,17 +69,12 @@ class TeamComponent extends Component {
                 <div>
                 <Navbar/>
                 </div>
-                <div>
-                <p></p>
-                <h3>First Team Squad 20/21 </h3>
-                </div>
-                <div> <p></p> </div>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
 
                 <div className="teamcontainer" background="white">
                                 <div className="container">
                                 <p></p>
-                                <h3>First Team Squad 20/21 </h3>
+                                <h2new className='section-title'> First Team Squad</h2new>
                                 </div>
                                 <div> <p></p> </div>
                     <table className="table" >

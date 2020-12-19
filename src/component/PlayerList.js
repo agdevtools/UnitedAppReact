@@ -1,5 +1,5 @@
 import React from 'react'
-import Player from './Player'
+import Player from './PlayerCard'
 import Navbar from './NavBar';
 import MyFooter from './MyFooter';
 
@@ -25,11 +25,6 @@ export default function PlayerList() {
     <div>
     <Navbar/>
     </div>
-    <div className="container">
-    <p></p>
-      <h2new className='section-title'> Meet the Players</h2new>
-    </div>
-      <div> <p></p> </div>
     <div className="teamcontainer">
         <div className="container">
         <p></p>

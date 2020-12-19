@@ -141,15 +141,10 @@ class PlayerComponent extends Component {
         return (
             <div className="container">
             <Navbar/>
-              <div className="container">
-              <p> </p>
-              <div>  <p> </p> <br></br> </div>
-             <h3>Player</h3>
-             </div>
                 <div className="teamcontainer">
                 <div className="container">
-                              <div>  <p> </p> <br></br> </div>
-                             <h3>Player</h3>
+                <p></p>
+                             <h2new className='section-title'> Player </h2new>
                              </div>
                     <Formik
                         initialValues={{

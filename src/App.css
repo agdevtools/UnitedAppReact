@@ -70,6 +70,17 @@ h2a {
   padding: 330px 300px;
 }
 
+h2_custom {
+  display: block;
+  color: black;
+  font-size: 3.5em;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  padding: 330px 300px;
+}
+
 h2b {
   display: block;
   color: #fff;
@@ -80,12 +91,10 @@ h2b {
 }
 
 h2c {
-  display: block;
-  color: black;
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  text-align: left;
   font-size: 1.5em;
-   text-align: left;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 h4 {
@@ -360,7 +369,7 @@ Navbar
 navtop {
   background: black;
   height: 1.5rem;
-  display: flex;
+  display: block;
   align-items: center;
   width: 100%;
   box-shadow: var(--lightShadow);
@@ -543,7 +552,7 @@ padding-bottom: 100px;
 }
 
 .teamcontainer {
-padding-top: 50px;
+padding-top: 100px;
 padding-left: 0rem;
 padding-left: 0rem;
 }

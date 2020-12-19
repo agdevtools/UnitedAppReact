@@ -9,8 +9,7 @@ class TableComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            league: [],
-            message: null
+            league: []
         }
         this.getLeague = this.getLeague.bind(this)
     }
@@ -42,17 +41,10 @@ class TableComponent extends Component {
                 <div>
                 <Navbar/>
                 </div>
-                <div>
-                <p></p>
-                <h3>First Team Squad 20/21 </h3>
-                </div>
-                <div> <p></p> </div>
-                {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
-
                 <div className="teamcontainer" background="white">
                                 <div className="container">
                                 <p></p>
-                                <h3>League Table Season 20/21 </h3>
+                                <h2new className='section-title'> Current Standings </h2new>
                                 </div>
                                 <div> <p></p> </div>
                     <table className="table" >
