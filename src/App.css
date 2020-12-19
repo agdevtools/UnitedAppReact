@@ -70,17 +70,6 @@ h2a {
   padding: 330px 300px;
 }
 
-h2_custom {
-  display: block;
-  color: black;
-  font-size: 3.5em;
-  text-align: center;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-  padding: 330px 300px;
-}
-
 h2b {
   display: block;
   color: #fff;
@@ -88,23 +77,6 @@ h2b {
   text-align: center;
   margin-left: 0;
   margin-right: 0;
-}
-
-h2c {
-  letter-spacing: var(--spacing);
-  text-transform: capitalize;
-  text-align: left;
-  font-size: 1.5em;
-}
-
-h4 {
-  display: block;
-  color: #fff;
-  font-size: 0.3em;
-  text-align: center;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
 }
 
 
