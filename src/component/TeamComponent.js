@@ -72,8 +72,8 @@ class TeamComponent extends Component {
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
 
                 <div className="teamcontainer" background="white">
+                                <div className="boxing">
                                 <div className="container">
-                                <p></p>
                                 <h2new className='section-title'> First Team Squad</h2new>
                                 </div>
                                 <div> <p></p> </div>
@@ -105,6 +105,7 @@ class TeamComponent extends Component {
                       <div left-padding="15px">
                                     <button className="btn btn-primary btn-details" onClick={this.addPlayerClicked}>Add</button>
                                 </div>
+                      </div>
                 </div>
                     <MyFooter/>
                  </div>

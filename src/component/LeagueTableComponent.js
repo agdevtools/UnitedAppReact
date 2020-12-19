@@ -42,6 +42,7 @@ class TableComponent extends Component {
                 <Navbar/>
                 </div>
                 <div className="teamcontainer" background="white">
+                                <div className="boxing">
                                 <div className="container">
                                 <p></p>
                                 <h2new className='section-title'> Current Standings </h2new>
@@ -76,6 +77,7 @@ class TableComponent extends Component {
                             }
                         </tbody>
                     </table>
+                  </div>
 
                 </div>
                     <MyFooter/>
