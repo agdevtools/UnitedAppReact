@@ -47,6 +47,7 @@ class TableComponent extends Component {
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th></th>
                                 <th>Team Name</th>
                                 <th>Played</th>
                                 <th>Won</th>
@@ -61,6 +62,7 @@ class TableComponent extends Component {
                                     league =>
                                         <tr key={league.position}>
                                             <td>{league.position}</td>
+                                            <td><img src={league.team.crestUrl} className="crest" align="right"></img></td>
                                             <td>{league.team.name}</td>
                                             <td>{league.playedGames}</td>
                                             <td>{league.won}</td>
@@ -75,7 +77,7 @@ class TableComponent extends Component {
                   </div>
 
                 </div>
-                    <MyFooter/>
+
                  </div>
 
         )
