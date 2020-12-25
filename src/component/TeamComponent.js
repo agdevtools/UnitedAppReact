@@ -66,6 +66,7 @@ class TeamComponent extends Component {
 
         render() {
         return (
+                <div>
                 <div className="container">
                 <Navbar/>
                 <div className="teamcontainer" background="white">
@@ -99,10 +100,12 @@ class TeamComponent extends Component {
                       <div left-padding="15px">
                                     <button className="btn btn-primary btn-details" onClick={this.addPlayerClicked}>Add</button>
                                 </div>
-                      </div>
-                </div>
-                    <MyFooter/>
+                            </div>
+                       </div>
+
                  </div>
+                    <MyFooter/>
+                </div>
 
         )
     }

@@ -352,15 +352,22 @@ p {
 
 .myfooter {
   background: black;
-  height: 7rem;
+  height: 10rem;
   display: flex;
   body-color: white;
   align-items: center;
   box-shadow: var(--lightShadow);
   z-index: 9999;
   overflow: hidden;
-  bottom: 0;
+  bottom: -100;
   width: 100%;
+    padding: 0;
+    float: left;
+    width: 100%;
+    margin-top: 40px;
+    z-index: 1000;
+    position: absolute;
+
 }
 
 .myfooter .p {

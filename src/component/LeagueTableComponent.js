@@ -79,7 +79,6 @@ class TableComponent extends Component {
                 </div>
 
                  </div>
-
         )
     }
 

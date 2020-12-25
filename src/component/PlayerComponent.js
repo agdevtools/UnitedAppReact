@@ -140,6 +140,7 @@ class PlayerComponent extends Component {
 
 
         return (
+            <div>
             <div className="container">
             <Navbar/>
                 <div className="teamcontainer">
@@ -211,8 +212,10 @@ class PlayerComponent extends Component {
                     </Formik>
                 </div>
                 </div>
-                       <MyFooter/>
+
             </div>
+                <MyFooter/>
+           </div>
         )
     }
 }

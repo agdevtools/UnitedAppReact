@@ -38,7 +38,11 @@ class Homepage extends Component {
             <cite>Ole Gunnar Solskjaer</cite></p2>
             </div>
             <p><br></br></p>
+
+            <MyFooter/>
             </div>
+
+
 
         )
     }

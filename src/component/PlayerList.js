@@ -22,8 +22,9 @@ export default function PlayerList() {
     )
   }
   return (
-    <div className="container">
     <div>
+    <div className="container">
+
     <Navbar/>
     </div>
     <div className="teamcontainer">
