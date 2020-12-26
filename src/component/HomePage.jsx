@@ -6,6 +6,7 @@ import ole from './ole.jpg';
 import HeaderText from './HeaderText';
 import FormCard from './FormCard';
 import TableComponent from './LeagueTableComponent';
+import FormTable from './FormTable';
 import {
   Link
 } from "react-router-dom";
@@ -13,21 +14,6 @@ import {
 class Homepage extends Component {
 
     render() {
-
-    let aform = ["W","L","D","L","W"]
-    let acolor = []
-    var index;
-    for (index = 0; index < aform.length; ++index) {
-        if(aform[index]==="W") {
-             acolor.push("green")
-        }
-        else if(aform[index]==="L") {
-            acolor.push("red")
-        }
-        else {
-            acolor.push("orange")
-        }
-    }
 
         return (
              <div>
@@ -44,7 +30,7 @@ class Homepage extends Component {
               <cite>Sir Matt Busby</cite></p2>
               </div>
 
-               <div class="team-container">
+               <div class="team-container"  style={{paddingBottom :"5rem" }}>
                 <TableComponent/>
                </div>
 
@@ -57,17 +43,17 @@ class Homepage extends Component {
             </div>
             <p><br></br></p>
 
-            <div class="home-container">
-                    <p><br></br></p>
-              <HeaderText text="Current Form" />
-               <div className="form">
-                    <FormCard text={aform[0]} color={acolor[0]} style={{paddingLeft : "10rem"}}/>
-                    <FormCard text={aform[1]} color={acolor[1]} style={{paddingLeft : "10rem"}}/>
-                    <FormCard text={aform[2]} color={acolor[2]}/>
-                    <FormCard text={aform[3]} color={acolor[3]} />
-                    <FormCard text={aform[4]} color={acolor[4]} />
-               </div>
-               </div>
+          <div class="home-container" style={{paddingTop :"5rem" }}>
+
+          <HeaderText text="Form - Last 5 Games" />
+           <FormTable/>
+           </div>
+
+
+
+
+
+
               </div>
 
         )
