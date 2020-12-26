@@ -4,15 +4,33 @@ import MyFooter from './MyFooter';
 import logo from './logo2.png';
 import ole from './ole.jpg';
 import HeaderText from './HeaderText';
+import FormCard from './FormCard';
 import TableComponent from './LeagueTableComponent';
 import {
   Link
 } from "react-router-dom";
 
 class Homepage extends Component {
+
     render() {
+
+    let aform = ["W","L","D","L","W"]
+    let acolor = []
+    var index;
+    for (index = 0; index < aform.length; ++index) {
+        if(aform[index]==="W") {
+             acolor.push("green")
+        }
+        else if(aform[index]==="L") {
+            acolor.push("red")
+        }
+        else {
+            acolor.push("orange")
+        }
+    }
+
         return (
-              <div>
+             <div>
               <Navbar/>
               <div class="header-img">
                  <h2a>The United App <Link to="/playerlist"> </Link> </h2a>
@@ -38,7 +56,19 @@ class Homepage extends Component {
             <cite>Ole Gunnar Solskjaer</cite></p2>
             </div>
             <p><br></br></p>
-            </div>
+
+            <div class="home-container">
+                    <p><br></br></p>
+              <HeaderText text="Current Form" />
+               <div className="form">
+                    <FormCard text={aform[0]} color={acolor[0]} style={{paddingLeft : "10rem"}}/>
+                    <FormCard text={aform[1]} color={acolor[1]} style={{paddingLeft : "10rem"}}/>
+                    <FormCard text={aform[2]} color={acolor[2]}/>
+                    <FormCard text={aform[3]} color={acolor[3]} />
+                    <FormCard text={aform[4]} color={acolor[4]} />
+               </div>
+               </div>
+              </div>
 
         )
     }

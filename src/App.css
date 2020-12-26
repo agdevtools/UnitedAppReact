@@ -27,6 +27,12 @@ Variables
   padding-bottom: 4rem;
 }
 
+.home-container body {
+font-size: 100px;
+line-height: inherit;
+font-family: Arial, Helvetica, sans-serif;
+}
+
 .home-container-black {
   width: 100%;
   height: 800px;
@@ -651,3 +657,35 @@ cite {
   height: 400px;
   background-color :  white;
 }
+
+
+/*
+======
+Form
+======
+*/
+
+.form {
+  color: white;
+  margin-left: 10rem;
+  font-size: 50px;
+  text-align: center;
+  box-shadow: var(--lightShadow);
+  transition: var(--mainTransition);
+  display: grid;
+  height: 50px;
+  border-radius: var(--mainBorderRadius);
+  width: 196px;
+  height: 25px;
+  max-width: 116px;
+  display: grid;
+  column-gap: 0.2rem;
+  grid-template-columns: 50px 50px 50px 50px 50px;
+}
+
+.form:hover {
+  box-shadow: var(--darkShadow);
+}
+
+
+
