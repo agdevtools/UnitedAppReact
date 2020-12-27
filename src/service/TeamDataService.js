@@ -23,6 +23,10 @@ class TeamDataService {
             return axios.get(`${FOOTIE_STATS_URL}/league`);
     }
 
+    getForm() {
+            return axios.get(`${FOOTIE_STATS_URL}/form`);
+    }
+
     deletePlayer(id) {
         return axios.delete(`${TEAM_API_URL}/team/${id}`);
     }

@@ -1,49 +1,77 @@
-import React from 'react'
+import React, { Component } from 'react';
+import TeamDataService from '../service/TeamDataService';
 
-export default function FormTable({ text }) {
+class FormTable extends Component {
 
-let aform = ["W","L","D","L","W"]
-    let acolor = []
-    var index;
-    for (index = 0; index < aform.length; ++index) {
-        if(aform[index]==="W") {
-             acolor.push("green")
-        }
-        else if(aform[index]==="L") {
-            acolor.push("red")
-        }
-        else {
-            acolor.push("orange")
-        }
+    constructor(props) {
+            super(props)
+            this.state = {
+                aform: [],
+                acolor: []}
+        this.getForm = this.getForm.bind(this)
     }
 
+    componentDidMount() {
+        this.getForm();
+    }
+
+    getForm() {
+        TeamDataService.getForm()
+            .then(
+                response => {
+                    console.log(response);
+                    this.setState({ aform: response.data })
+                }
+
+            , (error) => {
+              console.log("there was an error defaulting to default player list");
+              this.setState({ aform : ["L","L","L","L","L"]})
+            }
+            )
+    }
+
+
+  render() {
+
+                var index;
+                for (index = 0; index < this.state.aform.length; ++index) {
+                    if(this.state.aform[index]==="W") {
+                         this.state.acolor.push("green")
+                    }
+                    else if(this.state.aform[index]==="L") {
+                        this.state.acolor.push("red")
+                    }
+                    else {
+                        this.state.acolor.push("orange")
+                    }
+                }
   return (
                     <div style={{paddingLeft :"10rem" }}>
                        <table class="result" border="1">
                          <tr>
                            <td>
                              <div>
-                               <button className="btn-form btn-form-primary btn-form-details" style={{background : acolor[0]}}>{aform[0]} </button>
+                               <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.acolor[0]}}>{this.state.aform[0]} </button>
                              </div>
                            </td>
                            <td>
                              <div>
-                               <button className="btn-form btn-form-primary btn-form-details" style={{background : acolor[1]}} > {aform[1]}</button>
+                               <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.acolor[1]}} > {this.state.aform[1]}</button>
                              </div>
                            </td>
                                <td>
                                  <div>
-                                   <button className="btn-form btn-form-primary btn-form-details" style={{background : acolor[2]}} >{aform[2]}</button>
+                                   <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.acolor[2]}} >{this.state.aform[2]}</button>
                                  </div>
                                </td>
                               <td>
                                 <div>
-                                  <button className="btn-form btn-form-primary btn-form-details" style={{background : acolor[3]}} >{aform[3]}</button>
+                                  <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.acolor[3]}} >{this.state.aform[3]}</button>
                                 </div>
                               </td>
                              <td>
                                <div>
-                                 <button className="btn-form btn-form-primary btn-form-details" style={{background : acolor[4]}} >{aform[4]}</button>
+                                 <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.acolor[4]}} >{this.state.aform[4]}</button>
                                </div>
                              </td>
                          </tr>
@@ -52,3 +80,5 @@ let aform = ["W","L","D","L","W"]
 
   )
 }
+}
+export default FormTable
