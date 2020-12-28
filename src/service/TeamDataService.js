@@ -10,7 +10,7 @@ if (getEnv() === "local") {
 }
 else  {
 TEAM_API_URL = 'https://unitedappapi.herokuapp.com'
-FOOTIE_STATS_URL = 'https://footiestats.herokuapp.com/footiestats/api'
+FOOTIE_STATS_URL = 'https://footiestats.herokuapp.com/api'
 }
 
 class TeamDataService {
