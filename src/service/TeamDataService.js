@@ -27,6 +27,10 @@ class TeamDataService {
             return axios.get(`${FOOTIE_STATS_URL}/form`);
     }
 
+    getNextMatch() {
+                return axios.get(`${FOOTIE_STATS_URL}/next`);
+        }
+
     deletePlayer(id) {
         return axios.delete(`${TEAM_API_URL}/team/${id}`);
     }

@@ -7,6 +7,7 @@ import HeaderText from './HeaderText';
 import FormCard from './FormCard';
 import TableComponent from './LeagueTableComponent';
 import FormTable from './FormTable';
+import NextMatch from './NextMatch';
 import {
   Link
 } from "react-router-dom";
@@ -45,7 +46,8 @@ class Homepage extends Component {
 
           <div class="home-container" style={{paddingTop :"5rem" }}>
 
-          <HeaderText text="Form - Last 5 Games" />
+          <HeaderText text="Upcoming Fixtures" />
+           <NextMatch/>
            <FormTable/>
            </div>
 
