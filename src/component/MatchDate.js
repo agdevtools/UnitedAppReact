@@ -3,18 +3,16 @@ import TeamDataService from '../service/TeamDataService';
 import HeaderText from './HeaderText';
 import FormTable from './FormTable';
 
-  function MatchDetails(id, utcDate, status, matchday, homeTeam, awayTeam, homeTeamId, awayTeamId) {
+  function MatchDetails(id, utcDate, status, matchday, homeTeam, awayTeam) {
       this.id = id;
       this.utcDate = utcDate;
       this.status = status;
       this.matchday = matchday;
       this.homeTeam = homeTeam;
       this.awayTeam = awayTeam;
-      this.homeTeamId = homeTeamId;
-      this.awayTeamId = awayTeamId;
   }
 
-class NextMatch extends Component {
+class MatchDate extends Component {
 
     constructor(props) {
             super(props)
@@ -50,9 +48,9 @@ class NextMatch extends Component {
 
   return (
         <div>
-            <h3 style={{paddingTop :"1rem" ,paddingLeft :"1.5rem"}}> {this.state.matchDetails.homeTeam}   vs    {this.state.matchDetails.awayTeam} </h3>
+            <h4 style={{paddingTop :"1rem" ,paddingLeft :"9.5rem"}}> Matchday {this.state.matchDetails.matchday}  {this.state.matchDetails.utcDate} </h4>
          </div>
   )
 }
 }
-export default NextMatch
+export default MatchDate

@@ -24,7 +24,16 @@ class TeamDataService {
     }
 
     getForm() {
-            return axios.get(`${FOOTIE_STATS_URL}/form`);
+            return axios.get(`${FOOTIE_STATS_URL}/form/66`);
+    }
+
+    getHomeForm(homeTeamId) {
+            console.log("************  called API HOME FORM ************* HOME TEAM ID = ", homeTeamId)
+            return axios.get(`${FOOTIE_STATS_URL}/form/${homeTeamId}`);
+    }
+
+    getAwayForm(awayTeamId) {
+            return axios.get(`${FOOTIE_STATS_URL}/form/${awayTeamId}`);
     }
 
     getNextMatch() {

@@ -693,17 +693,66 @@ table.result {
 }
 
 .result td:nth-child(5) {
-  width: 100%;
-}
-
-.result td:nth-child(1) div {
   min-width: 32px;
   max-width: 32px;
   border-spacing: 4px 0;
   padding: 10px 0;
 }
 
+.result td:nth-child(6) {
+   min-width: 32px;
+   max-width: 500px;
+   border-spacing: 4px 0;
+   padding: 10px 0;
+}
+
+.result td:nth-child(7) {
+    min-width: 32px;
+    max-width: 32px;
+    border-spacing: 4px 0;
+    padding: 10px 0;
+}
+
+.result td:nth-child(8) {
+    min-width: 32px;
+    max-width: 32px;
+    border-spacing: 4px 0;
+    padding: 10px 0;
+}
+
+.result td:nth-child(9) {
+    min-width: 32px;
+    max-width: 32px;
+    border-spacing: 4px 0;
+    padding: 10px 0;
+}
+
+.result td:nth-child(10) {
+    min-width: 32px;
+    max-width: 32px;
+    border-spacing: 4px 0;
+    padding: 10px 0;
+}
+
+.result td:nth-child(11) {
+  width: 37%;
+}
+
+.result td:nth-child(1) div {
+  min-width: 32px;
+  max-width: 32px;
+  border-spacing: 2px 0;
+  padding: 10px 0;
+}
+
 .result td:nth-child(2) div {
+  min-width: 32px;
+  max-width: 32px;
+  border-spacing: 2px 0;
+  padding: 10px 0;
+}
+
+.result td:nth-child(4) div {
   min-width: 32px;
   max-width: 32px;
   border-spacing: 4px 0;
