@@ -34,7 +34,7 @@ class NextMatch extends Component {
             .then(
                 response => {
                     console.log("******* RESPONSE IS ********" , response.data);
-                     this.setState({matchDetails: response.data.matchDetails})
+                     this.setState({matchDetails: response.data.fixtureDetails})
                      console.log("*****  Object is *****", this.state.matchDetails)
                 }
 

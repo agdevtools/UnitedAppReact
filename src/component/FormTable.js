@@ -41,9 +41,9 @@ class FormTable extends Component {
                     .then(
                         response => {
                             console.log("******* RESPONSE IS ********" , response.data);
-                             this.setState({matchDetails: response.data.matchDetails})
-                             this.setState({homeTeamId: response.data.matchDetails.homeTeamId})
-                             this.setState({awayTeamId: response.data.matchDetails.awayTeamId})
+                             this.setState({matchDetails: response.data.fixtureDetails})
+                             this.setState({homeTeamId: response.data.fixtureDetails.homeTeamId})
+                             this.setState({awayTeamId: response.data.fixtureDetails.awayTeamId})
                              console.log("*****  Object is *****", this.state.matchDetails)
                              console.log("*****  home id is *****", this.state.homeTeamId)
                              console.log("*****  away id is *****", this.state.awayTeamId)
