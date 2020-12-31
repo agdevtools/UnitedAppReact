@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TeamDataService from '../service/TeamDataService';
-import NextMatch from './NextMatch';
+import FormForm from './FormForm';
 
 
   function MatchDetails(id, utcDate, status, matchday, homeTeam, awayTeam, homeTeamId, awayTeamId) {
@@ -24,6 +24,7 @@ class FormTable extends Component {
                 hcolor: [],
                 acolor: [],
                 matchDetails : Object,
+                fixtureDetails : [],
                 homeTeamId : "",
                 awayTeamId : ""
                 }
@@ -42,8 +43,11 @@ class FormTable extends Component {
                         response => {
                             console.log("******* RESPONSE IS ********" , response.data);
                              this.setState({matchDetails: response.data.fixtureDetails})
+                             this.setState({fixtureDetails: response.data.fixtureDetails})
+                             console.log("******* FIXTURE DETAILS IS ********" , this.state.fixtureDetails);
                              this.setState({homeTeamId: response.data.fixtureDetails.homeTeamId})
                              this.setState({awayTeamId: response.data.fixtureDetails.awayTeamId})
+
                              console.log("*****  Object is *****", this.state.matchDetails)
                              console.log("*****  home id is *****", this.state.homeTeamId)
                              console.log("*****  away id is *****", this.state.awayTeamId)
@@ -119,63 +123,11 @@ class FormTable extends Component {
                 }
   return (
                     <div style={{paddingLeft :"9rem" }}>
-                       <table class="result" border="1">
-                         <tr>
-                           <td>
-                             <div>
-                               <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.hcolor[0]}}>{this.state.hform[0]} </button>
-                             </div>
-                           </td>
-                           <td>
-                             <div>
-                               <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.hcolor[1]}} > {this.state.hform[1]}</button>
-                             </div>
-                           </td>
-                               <td>
-                                 <div>
-                                   <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.hcolor[2]}} >{this.state.hform[2]}</button>
-                                 </div>
-                               </td>
-                              <td>
-                                <div>
-                                  <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.hcolor[3]}} >{this.state.hform[3]}</button>
-                                </div>
-                              </td>
-                             <td>
-                               <div>
-                                 <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.hcolor[4]}} >{this.state.hform[4]}</button>
-                               </div>
-                             </td>
-                               <td>
-                                 <NextMatch/>
-                              </td>
-                             <td>
-                                 <div>
-                                    <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.acolor[0]}} >{this.state.aform[0]}</button>
-                                </div>
-                             </td>
-                           <td>
-                              <div>
-                                 <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.acolor[1]}} >{this.state.aform[1]}</button>
-                             </div>
-                             </td>
-                          <td>
-                               <div>
-                                  <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.acolor[2]}} >{this.state.aform[2]}</button>
-                              </div>
-                              </td>
-                           <td>
-                                <div>
-                                   <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.acolor[3]}} >{this.state.aform[3]}</button>
-                               </div>
-                               </td>
-                           <td>
-                           <div>
-                              <button className="btn-form btn-form-primary btn-form-details" style={{background : this.state.acolor[4]}} >{this.state.aform[4]}</button>
-                          </div>
-                          </td>
-                         </tr>
-                       </table>
+                            <FormForm hform={this.state.hform} hcolor={this.state.acolor[0]} aform={this.state.aform[0]} acolor={this.state.acolor[0]} fixtureDetails={this.state.fixtureDetails[0]}  />
+                            <FormForm hform={this.state.hform} hcolor={this.state.acolor[0]} aform={this.state.aform[0]} acolor={this.state.acolor[0]} fixtureDetails={this.state.fixtureDetails[1]}  />
+                            <FormForm hform={this.state.hform} hcolor={this.state.acolor[0]} aform={this.state.aform[0]} acolor={this.state.acolor[0]} fixtureDetails={this.state.fixtureDetails[2]}  />
+                            <FormForm hform={this.state.hform} hcolor={this.state.acolor[0]} aform={this.state.aform[0]} acolor={this.state.acolor[0]} fixtureDetails={this.state.fixtureDetails[3]}  />
+                            <FormForm hform={this.state.hform} hcolor={this.state.acolor[0]} aform={this.state.aform[0]} acolor={this.state.acolor[0]} fixtureDetails={this.state.fixtureDetails[4]}  />
                     </div>
 
   )
