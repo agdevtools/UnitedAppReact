@@ -3,24 +3,51 @@ import TeamDataService from '../service/TeamDataService';
 import HeaderText from './HeaderText';
 import NextMatch from './NextMatch';
 
-  function MatchDetails(id, utcDate, status, matchday, homeTeam, awayTeam, homeTeamId, awayTeamId) {
-      this.id = id;
-      this.utcDate = utcDate;
-      this.status = status;
-      this.matchday = matchday;
-      this.homeTeam = homeTeam;
-      this.awayTeam = awayTeam;
-      this.homeTeamId = homeTeamId;
-      this.awayTeamId = awayTeamId;
-  }
+export default function FormForm({fixtureObject, homeTeamId, awayTeamId, hform, aform, homeTeam, awayTeam})  {
 
-export default function FormForm({hform, hcolor, aform, acolor, fixtureDetails}) {
+console.log("********  NUMBER 1 *********", homeTeamId)
+console.log("********  NUMBER 2 *********", awayTeamId)
+console.log("********  NUMBER 3 *********", hform)
+console.log("********  NUMBER 4 *********", aform)
+console.log("********  NUMBER 5 *********", homeTeam)
+console.log("********  NUMBER 6 *********", awayTeam)
 
-hform = (typeof hform !== 'undefined') ?  hform : []
-hcolor = (typeof hcolor !== 'undefined') ?  hcolor : []
-aform = (typeof aform !== 'undefined') ?  aform : []
-acolor = (typeof acolor !== 'undefined') ?  acolor : []
-fixtureDetails = (typeof fixtureDetails !== 'undefined') ?  fixtureDetails : []
+
+  if (typeof(aform) !== 'undefined') {
+   if (typeof(hform) !== 'undefined') {
+
+                var hcolor=[];
+                var acolor=[];
+                var index;
+
+                for (index = 0; index < 5; ++index) {
+                    console.log (" index in 2nd foe is ", index)
+                    console.log(" aform = ", hform)
+                    console.log (" comparing ", hform)
+                    if(hform[index]==="W") {
+                         hcolor.push("green")
+                    }
+                    else if(hform[index]==="L") {
+                        hcolor.push("red")
+                    }
+                    else {
+                        hcolor.push("orange")
+                    }
+                }
+
+                index = 0;
+                for (index = 0; index < 5; ++index) {
+                    if(aform[index]==="W") {
+                         acolor.push("green")
+                    }
+                    else if(aform[index]==="L") {
+                        acolor.push("red")
+                    }
+                    else {
+                        acolor.push("orange")
+                    }
+                }
+}
 
   return (
 
@@ -32,14 +59,14 @@ fixtureDetails = (typeof fixtureDetails !== 'undefined') ?  fixtureDetails : []
                                <button className="btn-form btn-form-primary btn-form-details" style={{background : hcolor[0]}}>{hform[0]} </button>
                              </div>
                            </td>
-                           <td>
+                          <td>
                              <div>
-                               <button className="btn-form btn-form-primary btn-form-details" style={{background : hcolor[1]}} > {hform[1]}</button>
+                               <button className="btn-form btn-form-primary btn-form-details" style={{background : hcolor[0]}} > {hform[1]}</button>
                              </div>
                            </td>
                                <td>
                                  <div>
-                                   <button className="btn-form btn-form-primary btn-form-details" style={{background : hcolor[2]}} >{hform[2]}</button>
+                                   <button className="btn-form btn-form-primary btn-form-details" style={{background : hcolor[0]}} >{hform[2]}</button>
                                  </div>
                                </td>
                               <td>
@@ -53,7 +80,7 @@ fixtureDetails = (typeof fixtureDetails !== 'undefined') ?  fixtureDetails : []
                                </div>
                              </td>
                                <td>
-                                 <NextMatch fixtureDetails={fixtureDetails}/>
+                                 <NextMatch homeTeam={homeTeam}  awayTeam={awayTeam}/>
                               </td>
                              <td>
                                  <div>
@@ -79,13 +106,11 @@ fixtureDetails = (typeof fixtureDetails !== 'undefined') ?  fixtureDetails : []
                            <div>
                               <button className="btn-form btn-form-primary btn-form-details" style={{background : acolor[4]}} >{aform[4]}</button>
                           </div>
-                          </td>
-                         </tr>
+                         </td>
+                          </tr>
                        </table>
 
-
-
-
   )
-
+}
+return null
 }

@@ -24,16 +24,24 @@ class TeamDataService {
     }
 
     getForm() {
-            return axios.get(`${FOOTIE_STATS_URL}/form/66`);
+            return axios.get(`${FOOTIE_STATS_URL}/form`);
     }
 
     getHomeForm(homeTeamId) {
-            console.log("************  called API HOME FORM ************* HOME TEAM ID = ", homeTeamId)
+            if (homeTeamId !== 'undefined') {
+            console.log("************  calling API HOME FORM ************* with team id =", homeTeamId)
             return axios.get(`${FOOTIE_STATS_URL}/form/${homeTeamId}`);
+            }
+            else return []
     }
 
     getAwayForm(awayTeamId) {
-            return axios.get(`${FOOTIE_STATS_URL}/form/${awayTeamId}`);
+
+                        if (awayTeamId !== 'undefined') {
+                        console.log("************  calling API AWAY FORM ************* with team id =", awayTeamId)
+                        return axios.get(`${FOOTIE_STATS_URL}/form/${awayTeamId}`);
+                        }
+                        else return []
     }
 
     getNextMatch() {
