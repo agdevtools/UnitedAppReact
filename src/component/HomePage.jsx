@@ -39,7 +39,7 @@ class Homepage extends Component {
             </div>
             <p><br></br></p>
 
-            <MyFooter/>
+
             </div>
 
 

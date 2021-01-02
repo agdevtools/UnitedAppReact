@@ -11,7 +11,12 @@ class App extends React.Component {
     return (
       <div>
         <Routing/>
-        <MyFooter/>
+                    <div>
+                    <p><br></br></p>
+
+                    <p><br></br></p>
+                    </div>
+        <MyFooter />
       </div>
     )
   }
