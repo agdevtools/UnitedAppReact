@@ -18,12 +18,9 @@ console.log("********  NUMBER 6 *********", awayTeam)
 
                 var hcolor=[];
                 var acolor=[];
-                var index;
+                var index=0;
 
                 for (index = 0; index < 5; ++index) {
-                    console.log (" index in 2nd foe is ", index)
-                    console.log(" aform = ", hform)
-                    console.log (" comparing ", hform)
                     if(hform[index]==="W") {
                          hcolor.push("green")
                     }
@@ -61,12 +58,12 @@ console.log("********  NUMBER 6 *********", awayTeam)
                            </td>
                           <td>
                              <div>
-                               <button className="btn-form btn-form-primary btn-form-details" style={{background : hcolor[0]}} > {hform[1]}</button>
+                               <button className="btn-form btn-form-primary btn-form-details" style={{background : hcolor[1]}} > {hform[1]}</button>
                              </div>
                            </td>
                                <td>
                                  <div>
-                                   <button className="btn-form btn-form-primary btn-form-details" style={{background : hcolor[0]}} >{hform[2]}</button>
+                                   <button className="btn-form btn-form-primary btn-form-details" style={{background : hcolor[2]}} >{hform[2]}</button>
                                  </div>
                                </td>
                               <td>
