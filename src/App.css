@@ -27,6 +27,12 @@ Variables
   padding-bottom: 4rem;
 }
 
+.home-container body {
+font-size: 100px;
+line-height: inherit;
+font-family: Arial, Helvetica, sans-serif;
+}
+
 .home-container-black {
   width: 100%;
   height: 800px;
@@ -658,3 +664,167 @@ cite {
   height: 400px;
   background-color :  white;
 }
+
+
+/*
+======
+Form
+======
+*/
+
+.form {
+  color: white;
+  margin-left: 10rem;
+  font-size: 50px;
+  text-align: center;
+  box-shadow: var(--lightShadow);
+  transition: var(--mainTransition);
+  display: grid;
+  height: 50px;
+  border-radius: var(--mainBorderRadius);
+  width: 196px;
+  height: 25px;
+  max-width: 116px;
+  display: grid;
+  column-gap: 0.2rem;
+  grid-template-columns: 50px 50px 50px 50px 50px;
+}
+
+.form:hover {
+  box-shadow: var(--darkShadow);
+}
+
+table.result {
+  width: 100%;
+  border-spacing: 2px 0;
+}
+
+.result td:nth-child(5) {
+  min-width: 32px;
+  max-width: 32px;
+  border-spacing: 4px 0;
+  padding: 10px 0;
+}
+
+.result td:nth-child(6) {
+   min-width: 32px;
+   max-width: 800px;
+   border-spacing: 4px 0;
+   padding: 10px 0;
+}
+
+.result td:nth-child(7) {
+    min-width: 32px;
+    max-width: 32px;
+    border-spacing: 4px 0;
+    padding: 10px 0;
+}
+
+.result td:nth-child(8) {
+    min-width: 32px;
+    max-width: 32px;
+    border-spacing: 4px 0;
+    padding: 10px 0;
+}
+
+.result td:nth-child(9) {
+    min-width: 32px;
+    max-width: 32px;
+    border-spacing: 4px 0;
+    padding: 10px 0;
+}
+
+.result td:nth-child(10) {
+    min-width: 32px;
+    max-width: 32px;
+    border-spacing: 4px 0;
+    padding: 10px 0;
+}
+
+.result td:nth-child(11) {
+  width: 25%;
+}
+
+.result td:nth-child(1) div {
+  min-width: 32px;
+  max-width: 32px;
+  border-spacing: 2px 0;
+  padding: 10px 0;
+}
+
+.result td:nth-child(2) div {
+  min-width: 32px;
+  max-width: 32px;
+  border-spacing: 2px 0;
+  padding: 10px 0;
+}
+
+.result td:nth-child(4) div {
+  min-width: 32px;
+  max-width: 32px;
+  border-spacing: 4px 0;
+  padding: 10px 0;
+}
+
+/*
+======
+Form Buttons
+======
+*/
+.btn-form,
+.btn-form-white,
+.btn-form-primary {
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  color: #c70101;
+  border: 2px solid var(--primaryColor);
+  padding: 0.45rem 0.8rem;
+  display: inline-block;
+  transition: var(--mainTransition);
+  cursor: pointer;
+  font-size: 0.8rem;
+  background: transparent;
+  border-radius: var(--mainBorderRadius);
+  display: inline-block;
+}
+.btn-form:hover {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+}
+.btn-form-white {
+  background: transparent;
+  color: var(--mainWhite);
+  border-color: var(--mainWhite);
+}
+.btn-form-white:hover {
+  background: var(--mainWhite);
+  color: var(--primaryColor);
+}
+.btn-form-primary {
+  background: green;
+  color: var(--mainWhite);
+  border-color: transparent;
+  width: 30px;
+}
+.btn-form-primary:hover {
+  background: var(--primaryLightColor);
+  color: var(--primaryColor);
+}
+.btn-form-block {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: var(--lightShadow);
+  text-align: center;
+}
+.btn-form-details {
+  padding: 0.25rem 0.4rem;
+}
+.btn-form-details:hover {
+  background: var(--primaryLightColor);
+  border-color: var(--primaryLightColor);
+}
+
+
+
+

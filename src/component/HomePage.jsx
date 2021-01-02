@@ -4,15 +4,21 @@ import MyFooter from './MyFooter';
 import logo from './logo2.png';
 import ole from './ole.jpg';
 import HeaderText from './HeaderText';
+import FormCard from './FormCard';
 import TableComponent from './LeagueTableComponent';
+import FormTable from './FormTable';
+import NextMatch from './NextMatch';
+import MatchDate from './MatchDate';
 import {
   Link
 } from "react-router-dom";
 
 class Homepage extends Component {
+
     render() {
+
         return (
-              <div>
+             <div>
               <Navbar/>
               <div class="header-img">
                  <h2a>The United App <Link to="/playerlist"> </Link> </h2a>
@@ -26,7 +32,7 @@ class Homepage extends Component {
               <cite>Sir Matt Busby</cite></p2>
               </div>
 
-               <div class="team-container">
+               <div class="team-container"  style={{paddingBottom :"5rem" }}>
                 <TableComponent/>
                </div>
 
@@ -39,8 +45,28 @@ class Homepage extends Component {
             </div>
             <p><br></br></p>
 
+<<<<<<< HEAD
 
             </div>
+=======
+          <div class="home-container" style={{paddingTop :"5rem" }}>
+
+          <HeaderText text="Upcoming Fixtures" />
+          <MatchDate/>
+           <FormTable/>
+           </div>
+
+         <div class="home-container" style={{paddingTop :"5rem" }}>
+
+          </div>
+
+
+
+
+
+
+              </div>
+>>>>>>> master
 
 
 
