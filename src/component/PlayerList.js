@@ -27,16 +27,16 @@ export default function PlayerList() {
 
     <Navbar/>
     </div>
-    <div className="teamcontainer">
+    <div className="teamcontainer" style={{paddingTop:"6rem" }} >
           <div> <p></p> </div>
-        <HeaderText text="Meet the Players"/>
+        <HeaderText text="Meet the Players" style={{paddingTop:"6rem" }}/>
       <div className='player-center'>
         {players.map((item) => {
           return <Player key={item.id} {...item} />
         })}
       </div>
       </div>
-          <MyFooter/>
+
       </div>
 
   )

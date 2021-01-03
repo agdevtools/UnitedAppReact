@@ -37,7 +37,7 @@ class TableComponent extends Component {
         return (
                 <div className="container">
                 <Navbar/>
-                <div className="teamcontainer" background="white">
+                <div className="teamcontainer" background="white" style={{paddingTop:"6rem" }}>
                                 <div className="boxing">
                                 <div className="container">
                                 <HeaderText text="Current Standings"/>

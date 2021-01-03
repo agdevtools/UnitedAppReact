@@ -3,7 +3,6 @@ import Select from 'react-select';
 import { Formik, Form } from 'formik';
 import TeamDataService from '../service/TeamDataService';
 import Navbar from './NavBar';
-import MyFooter from './MyFooter';
 import TextField from '@material-ui/core/TextField';
 import HeaderText from './HeaderText';
 
@@ -142,9 +141,9 @@ class PlayerComponent extends Component {
         return (
             <div>
             <div className="container">
-            <Navbar/>
-                <div className="teamcontainer">
-                <div className="boxing">
+            <Navbar />
+                <div className="teamcontainer" style={{paddingTop:"6rem" }}>
+                <div className="boxing" >
                      <HeaderText text="Player"/>
                     <Formik
                         initialValues={{
@@ -214,7 +213,7 @@ class PlayerComponent extends Component {
                 </div>
 
             </div>
-                <MyFooter/>
+
            </div>
         )
     }

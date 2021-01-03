@@ -69,7 +69,7 @@ class TeamComponent extends Component {
                 <div>
                 <div className="container">
                 <Navbar/>
-                <div className="teamcontainer" background="white">
+                <div className="teamcontainer" background="white" style={{paddingTop:"6rem" }} >
                       <div className="boxing">
                             <HeaderText text="First Team Squad"/>
                     <table className="table" >
@@ -104,7 +104,7 @@ class TeamComponent extends Component {
                        </div>
 
                  </div>
-                    <MyFooter/>
+
                 </div>
 
         )

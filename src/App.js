@@ -16,7 +16,7 @@ class App extends React.Component {
 
                     <p><br></br></p>
                     </div>
-        <MyFooter />
+        <MyFooter  style={{color :"white" }} />
       </div>
     )
   }

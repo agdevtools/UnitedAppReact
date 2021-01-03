@@ -4,7 +4,7 @@ class MyFooter extends Component {
   render() {
         return (
                 <div class="myfooter">
-                    <p align="right"> copyright agDevtools 2020 </p>
+                    <p style={{color :"white" }} > copyright agDevtools 2020 </p>
                  </div>
                  )
             }
