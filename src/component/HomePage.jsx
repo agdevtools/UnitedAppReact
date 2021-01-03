@@ -43,12 +43,11 @@ class Homepage extends Component {
              <blockquote align="right">At Man United, we play without fear, we play with courage. Go out there and express your skills. Be the kids that love to play football and go out and play in front of the best fans in the world</blockquote>
             <cite>Ole Gunnar Solskjaer</cite></p2>
             </div>
+            <div>
             <p><br></br></p>
 
-<<<<<<< HEAD
-
             </div>
-=======
+           <div>
           <div class="home-container" style={{paddingTop :"5rem" }}>
 
           <HeaderText text="Upcoming Fixtures" />
@@ -56,18 +55,9 @@ class Homepage extends Component {
            <FormTable/>
            </div>
 
-         <div class="home-container" style={{paddingTop :"5rem" }}>
+                <div class="home-container" style={{paddingTop :"5rem" }}>
 
           </div>
-
-
-
-
-
-
-              </div>
->>>>>>> master
-
 
 
         )
