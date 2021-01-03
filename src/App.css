@@ -15,6 +15,7 @@ Variables
   }
 .header-img {
   width: 100%;
+  min-width: 576px;
   height: 800px;
   background: url('https://media.tacdn.com/media/attractions-splice-spp-674x446/07/38/d7/89.jpg');
   background-size: cover;
