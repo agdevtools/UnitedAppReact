@@ -15,7 +15,7 @@ Variables
   }
 .header-img {
   width: 100%;
-  min-width: 576px;
+  min-width: 500px;
   height: 800px;
   background: url('https://media.tacdn.com/media/attractions-splice-spp-674x446/07/38/d7/89.jpg');
   background-size: cover;
@@ -24,6 +24,7 @@ Variables
 .home-container {
   width: 100%;
   height: 500px;
+  min-width: 500px;
   background-color :  white;
   padding-bottom: 8rem;
  overflow :scroll;
