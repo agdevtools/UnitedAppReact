@@ -3,8 +3,9 @@ import TeamDataService from '../service/TeamDataService';
 import HeaderText from './HeaderText';
 import NextMatch from './NextMatch';
 
-export default function FormForm({fixtureObject, homeTeamId, awayTeamId, hform, aform, homeTeam, awayTeam})  {
+export default function FormForm({fixtureObject, utcDate, homeTeamId, awayTeamId, hform, aform, homeTeam, awayTeam})  {
 
+console.log("********  NUMBER 0 *********", utcDate)
 console.log("********  NUMBER 1 *********", homeTeamId)
 console.log("********  NUMBER 2 *********", awayTeamId)
 console.log("********  NUMBER 3 *********", hform)

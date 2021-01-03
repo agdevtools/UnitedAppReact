@@ -14,7 +14,8 @@ import FormForm from './FormForm';
       this.awayTeamId = awayTeamId;
   }
 
-    function MyFixtureDetails(homeTeamId,awayTeamId, homeForm, awayForm, homeTeamName, awayTeamName) {
+    function MyFixtureDetails(utcDate, homeTeamId,awayTeamId, homeForm, awayForm, homeTeamName, awayTeamName) {
+        this.utcDate = utcDate;
         this.homeTeamId = homeTeamId;
         this.awayTeamId = awayTeamId;
         this.homeForm = homeForm;
@@ -108,6 +109,7 @@ class FormTable extends Component {
       if (typeof(this.state.formObject) !== 'undefined' ) {
 
       var test = new MyFixtureDetails(
+                    new Date(this.state.responseObject.fixtureDetails[0].utcDate).toLocaleDateString(),
                     this.state.responseObject.fixtureDetails[0].awayTeamId,
                     this.state.responseObject.fixtureDetails[0].homeTeamId,
                     this.myForm(this.state.responseObject.fixtureDetails[0].homeTeamId),
@@ -116,6 +118,7 @@ class FormTable extends Component {
                     this.state.responseObject.fixtureDetails[0].awayTeam,
                     )
 
+       var utcDate =  new Date(this.state.responseObject.fixtureDetails[0].utcDate).toLocaleDateString();
        var awayTeamId =  this.state.responseObject.fixtureDetails[0].awayTeamId;
        var homeTeamId = this.state.responseObject.fixtureDetails[0].homeTeamId;
        var hform = this.myForm(this.state.responseObject.fixtureDetails[0].homeTeamId);
@@ -123,6 +126,7 @@ class FormTable extends Component {
        var homeTeam = this.state.responseObject.fixtureDetails[0].homeTeam;
        var awayTeam = this.state.responseObject.fixtureDetails[0].awayTeam;
 
+      var utcDate1 =  new Date(this.state.responseObject.fixtureDetails[1].utcDate).toLocaleDateString();
       var awayTeamId1 =  this.state.responseObject.fixtureDetails[1].awayTeamId;
       var homeTeamId1 = this.state.responseObject.fixtureDetails[1].homeTeamId;
       var hform1 = this.myForm(this.state.responseObject.fixtureDetails[1].homeTeamId);
@@ -130,6 +134,7 @@ class FormTable extends Component {
       var homeTeam1 = this.state.responseObject.fixtureDetails[1].homeTeam;
       var awayTeam1 = this.state.responseObject.fixtureDetails[1].awayTeam;
 
+     var utcDate2 =  new Date(this.state.responseObject.fixtureDetails[2].utcDate).toLocaleDateString();
      var awayTeamId2 =  this.state.responseObject.fixtureDetails[2].awayTeamId;
      var homeTeamId2 = this.state.responseObject.fixtureDetails[2].homeTeamId;
      var hform2 = this.myForm(this.state.responseObject.fixtureDetails[2].homeTeamId);
@@ -137,6 +142,7 @@ class FormTable extends Component {
      var homeTeam2 = this.state.responseObject.fixtureDetails[2].homeTeam;
      var awayTeam2 = this.state.responseObject.fixtureDetails[2].awayTeam;
 
+    var utcDate3 = new Date(this.state.responseObject.fixtureDetails[3].utcDate).toLocaleDateString();
     var awayTeamId3 =  this.state.responseObject.fixtureDetails[3].awayTeamId;
     var homeTeamId3 = this.state.responseObject.fixtureDetails[3].homeTeamId;
     var hform3 = this.myForm(this.state.responseObject.fixtureDetails[3].homeTeamId);
@@ -144,29 +150,45 @@ class FormTable extends Component {
     var homeTeam3 = this.state.responseObject.fixtureDetails[3].homeTeam;
     var awayTeam3 = this.state.responseObject.fixtureDetails[3].awayTeam;
 
+   var utcDate4 =  new Date(this.state.responseObject.fixtureDetails[4].utcDate).toLocaleDateString();
    var awayTeamId4 =  this.state.responseObject.fixtureDetails[4].awayTeamId;
    var homeTeamId4 = this.state.responseObject.fixtureDetails[4].homeTeamId;
    var hform4 = this.myForm(this.state.responseObject.fixtureDetails[4].homeTeamId);
    var aform4 = this.myForm(this.state.responseObject.fixtureDetails[4].awayTeamId);
    var homeTeam4 = this.state.responseObject.fixtureDetails[4].homeTeam;
    var awayTeam4 = this.state.responseObject.fixtureDetails[4].awayTeam;
+
+    var currentUtcTime = new Date(); // This is in UTC
+
+    // Converts the UTC time to a locale specific format, including adjusting for timezone.
+    var currentDateTimeCentralTimeZone = new Date(currentUtcTime.toLocaleString('en-US', { timeZone: 'America/Chicago' }));
+
+    console.log('currentUtcTime: ' + currentUtcTime.toLocaleDateString());
+    console.log('currentUtcTime Hour: ' + currentUtcTime.getHours());
+    console.log('currentUtcTime Minute: ' + currentUtcTime.getMinutes());
+    console.log('currentDateTimeCentralTimeZone: ' +        currentDateTimeCentralTimeZone.toLocaleDateString());
+    console.log('currentDateTimeCentralTimeZone Hour: ' + currentDateTimeCentralTimeZone.getHours());
+    console.log('currentDateTimeCentralTimeZone Minute: ' + currentDateTimeCentralTimeZone.getMinutes());
        }
        }
 
   return (
   <div>
                     <div style={{paddingLeft :"9rem" }}>
+                             <div> <h6> {utcDate} </h6> </div>
                             <FormForm  fixtureObject={test}
+                                       utcDate={utcDate}
                                        homeTeamId={homeTeamId}
                                        awayTeamId={awayTeamId}
                                        hform={hform}
                                        aform={aform}
                                        homeTeam={homeTeam}
                                        awayTeam={awayTeam}
-                                       />
+                                        />
                      </div>
 
                      <div style={{paddingLeft :"9rem" }}>
+                      <div> <h6> {utcDate1} </h6> </div>
                              <FormForm  fixtureObject={test}
                                         homeTeamId={homeTeamId1}
                                         awayTeamId={awayTeamId1}
@@ -178,6 +200,7 @@ class FormTable extends Component {
                       </div>
 
                        <div style={{paddingLeft :"9rem" }}>
+                        <div> <h6> {utcDate2} </h6> </div>
                                <FormForm  fixtureObject={test}
                                           homeTeamId={homeTeamId2}
                                           awayTeamId={awayTeamId2}
@@ -188,6 +211,7 @@ class FormTable extends Component {
                                           />
                         </div>
                          <div style={{paddingLeft :"9rem" }}>
+                          <div> <h6> {utcDate3} </h6> </div>
                                  <FormForm  fixtureObject={test}
                                             homeTeamId={homeTeamId3}
                                             awayTeamId={awayTeamId3}
@@ -199,6 +223,7 @@ class FormTable extends Component {
                           </div>
 
                            <div style={{paddingLeft :"9rem" }}>
+                            <div> <h6> {utcDate4} </h6> </div>
                                    <FormForm  fixtureObject={test}
                                               homeTeamId={homeTeamId4}
                                               awayTeamId={awayTeamId4}

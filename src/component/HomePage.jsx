@@ -48,7 +48,6 @@ class Homepage extends Component {
           <div class="home-container" style={{paddingTop :"5rem" }} style={{float :"left" }}>
 
           <HeaderText text="Upcoming Fixtures" />
-          <MatchDate/>
            <FormTable/>
            </div>
 
