@@ -716,7 +716,7 @@ table.result {
 }
 
 .result td:nth-child(6) {
-   min-width: 32px;
+   min-width: 650px;
    max-width: 800px;
    border-spacing: 4px 0;
    padding: 10px 0;
