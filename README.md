@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-View this project on:  https://agdevtools.github.io/UnitedAppReact/
+View this project on:  https://unitedappfrontend.herokuapp.com/
 
 In the project directory, you can run:
 
