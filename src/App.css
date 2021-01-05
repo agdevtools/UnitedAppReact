@@ -363,7 +363,7 @@ p {
 
 .myfooter {
   background: black;
-  height: 10rem;
+  height: 22rem;
   display: flex;
   body-color: white;
   align-items: center;
@@ -411,12 +411,11 @@ navtop {
 
 nav {
   background: var(--manutdred);
-  height: 5.5rem;
+  height: 6.5rem;
   width: 100%;
-  display: flex;
   align-items: center;
   border-bottom: 2px solid var(--primaryColor);
-    z-index: 9999;
+  z-index: 9999;
 
   box-shadow: var(--lightShadow);
       margin: 0;
@@ -773,6 +772,32 @@ table.result {
   max-width: 32px;
   border-spacing: 4px 0;
   padding: 10px 0;
+}
+
+table.resultInline {
+  width: 100%;
+  border-spacing: 2px 0;
+}
+
+.resultInline td:nth-child(1) {
+   min-width: 340px;
+   max-width: 340px;
+   border-spacing: 4px 0;
+   padding: 10px 0;
+}x
+
+.resultInline td:nth-child(2) {
+   min-width: 50px;
+   max-width: 50px;
+   border-spacing: 4px 0;
+   padding: 5px 0;
+}
+
+.resultInline td:nth-child(3) {
+   min-width: 350px;
+   max-width: 350px;
+   border-spacing: 4px 0;
+   padding: 10px 0;
 }
 
 /*

@@ -6,7 +6,25 @@ export default function NextMatch({homeTeam , awayTeam}) {
 
   return (
         <div>
-            <h3 style={{paddingTop :"1rem" ,paddingLeft :"1.5rem"}}> {homeTeam}   vs    {awayTeam} </h3>
+            <table class="resultInline">
+                                     <tr>
+                                       <td>
+
+                                           <h3 style={{paddingTop :"1rem" ,paddingLeft :"1.5rem"}}  >{homeTeam}</h3>
+
+                                       </td>
+                                      <td>
+
+                                          <h4 style={{paddingTop :"1rem" ,paddingLeft :"1.5rem"}}  > vs </h4>
+
+                                      </td>
+                                     <td>
+
+                                         <h3 style={{paddingTop :"1rem" ,paddingLeft :"1.5rem"}}  >{awayTeam}</h3>
+
+                                     </td>
+                                       </tr>
+                       </table>
          </div>
   )
 
