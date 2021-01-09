@@ -5,7 +5,7 @@ import logo from './logo2.png';
 import ole from './ole.jpg';
 import HeaderText from './HeaderText';
 import FormCard from './FormCard';
-import TableComponent from './LeagueTableComponent';
+import TableComponent from './LeagueTableComponentNoNav';
 import FormTable from './FormTable';
 import NextMatch from './NextMatch';
 import MatchDate from './MatchDate';
