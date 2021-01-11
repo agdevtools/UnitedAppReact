@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Architecture
 
-![alt text](blob:https://agdevtools.atlassian.net/38d43b13-40ea-460a-bec1-f7a3976426ca#media-blob-url=true&id=c469c373-2fd8-4bd5-bd68-02d7c1657241&contextId=163843&collection=contentId-163843)
+![alt text](https://agdevtools.atlassian.net/38d43b13-40ea-460a-bec1-f7a3976426ca#media-blob-url=true&id=c469c373-2fd8-4bd5-bd68-02d7c1657241&contextId=163843&collection=contentId-163843)
 
 ## Available Scripts
 
