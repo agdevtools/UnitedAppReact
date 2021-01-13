@@ -174,7 +174,7 @@ class FormTable extends Component {
 
   return (
   <div>
-                    <div style={{paddingLeft :"9rem" }}>
+                    <div style={{paddingLeft :"0.5rem" }}>
                              <div> <h6> {utcDate} </h6> </div>
                             <FormForm  fixtureObject={test}
                                        utcDate={utcDate}
@@ -187,7 +187,7 @@ class FormTable extends Component {
                                         />
                      </div>
 
-                     <div style={{paddingLeft :"9rem" }}>
+                     <div style={{paddingLeft :"0.5rem" }}>
                       <div> <h6> {utcDate1} </h6> </div>
                              <FormForm  fixtureObject={test}
                                         homeTeamId={homeTeamId1}
@@ -199,7 +199,7 @@ class FormTable extends Component {
                                         />
                       </div>
 
-                       <div style={{paddingLeft :"9rem" }}>
+                       <div style={{paddingLeft :"0.5rem" }}>
                         <div> <h6> {utcDate2} </h6> </div>
                                <FormForm  fixtureObject={test}
                                           homeTeamId={homeTeamId2}
@@ -210,7 +210,7 @@ class FormTable extends Component {
                                           awayTeam={awayTeam2}
                                           />
                         </div>
-                         <div style={{paddingLeft :"9rem" }}>
+                         <div style={{paddingLeft :"0.5rem" }}>
                           <div> <h6> {utcDate3} </h6> </div>
                                  <FormForm  fixtureObject={test}
                                             homeTeamId={homeTeamId3}
@@ -222,7 +222,7 @@ class FormTable extends Component {
                                             />
                           </div>
 
-                           <div style={{paddingLeft :"9rem" }}>
+                           <div style={{paddingLeft :"0.5rem" }}>
                             <div> <h6> {utcDate4} </h6> </div>
                                    <FormForm  fixtureObject={test}
                                               homeTeamId={homeTeamId4}

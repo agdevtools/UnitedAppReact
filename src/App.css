@@ -23,13 +23,11 @@ Variables
 
 .home-container {
   width: 100%;
-  height: 500px;
+  height: 450px;
   min-width: 500px;
   background-color :  white;
   padding-bottom: 8rem;
- overflow :scroll;
- float:left;
- style={{overflow :"scroll" }}
+  float:left;
 }
 
 .home-container body {
@@ -452,9 +450,9 @@ nav {
 
 
 .logo-home {
-  height: 500px;
+  height: 400px;
   padding-top: 4rem;
-  padding-left: 4rem;
+  padding-left: 0.5rem;
   display:inline-block;
   float: left;
 }
@@ -669,7 +667,6 @@ cite {
   width: 100%;
   height: 400px;
   background-color :  white;
-overflow : scroll;
 }
 
 }

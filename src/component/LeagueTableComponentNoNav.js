@@ -35,12 +35,9 @@ class TableComponent extends Component {
         render() {
         return (
                 <div className="container">
-                <div className="teamcontainer" background="white" style={{paddingTop:"6rem" }}>
-                                <div className="boxing">
-                                <div className="container">
+
                                 <HeaderText text="Current Standings"/>
-                                </div>
-                                <div> <p></p> </div>
+
                     <table className="table" >
                         <thead>
                             <tr>
@@ -74,9 +71,6 @@ class TableComponent extends Component {
                     </table>
                   </div>
 
-                </div>
-
-                 </div>
         )
     }
 
