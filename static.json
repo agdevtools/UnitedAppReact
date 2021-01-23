@@ -2,5 +2,13 @@
   "root": "build/",
   "routes": {
     "/**": "index.html"
+  },
+  "proxies": {
+    "/api/": {
+      "origin": "${STATS_API_URL}"
+    },
+    "/team/": {
+      "origin": "${API_URL}"
+    }
   }
 }
