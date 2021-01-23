@@ -7,7 +7,7 @@
     "/api/": {
       "origin": "https://footiestats.herokuapp.com/api"
     },
-    "/team/": {
+    "/team": {
       "origin": "https://unitedappapi.herokuapp.com/team"
     }
   }
