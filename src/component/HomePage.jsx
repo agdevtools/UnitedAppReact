@@ -3,6 +3,7 @@ import Navbar from './NavBar';
 import MyFooter from './MyFooter';
 import logo from './logo2.png';
 import ole from './ole.jpg';
+import pllogo from './pllogo.jpg';
 import HeaderText from './HeaderText';
 import FormCard from './FormCard';
 import TableComponent from './LeagueTableComponentNoNav';
@@ -39,7 +40,7 @@ handleWindowSizeChange = () => {
     render() {
 
     const { width } = this.state;
-    const isMobile = width <= 500;
+    const isMobile = width <= 900;
       // the rest is the same...
 
 if (isMobile) {
@@ -77,9 +78,13 @@ if (isMobile) {
 
                <div class="home-container" style={{paddingTop :"5rem" }} style={{paddingLeft :"0rem" }} style={{height :"800px" }}>
 
-                                 <HeaderText text="Upcoming Fixtures" />
+                                <img src={pllogo} className='logo-pl' alt='logo' />
+                                <br></br>
+                                <br></br>
+                                <HeaderText text="Upcoming Premiere League Fixtures" style={{float :"right" }}/>
                                   <FormTable />
                                              <div>
+                                                         <p><br></br></p>
                                                          <p><br></br></p>
                                                          <p><br></br></p>
                                               </div>
@@ -119,13 +124,17 @@ if (isMobile) {
                     </div>
                     <p><br></br></p>
 
-                  <div class="home-container" style={{paddingTop :"5rem" }} style={{float :"left" }} style={{height :"800px" }}>
+                  <div class="home-container" style={{paddingTop :"3rem" }} style={{float :"left" }} style={{height :"900px" }}>
 
-                  <HeaderText text="Upcoming Fixtures" />
+                  <img src={pllogo} className='logo-pl' alt='logo' />
+                  <br></br>
+                  <br></br>
+                  <HeaderText text="Upcoming Premiere League Fixtures" style={{float :"right" }}/>
                                 <div class="home-container" style={{paddingLeft :"9rem" }} >
                                  <FormTable />
                                  </div>
                               <div>
+                                          <p><br></br></p>
                                           <p><br></br></p>
                                           <p><br></br></p>
                                </div>

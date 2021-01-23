@@ -457,6 +457,13 @@ nav {
   float: left;
 }
 
+.logo-pl {
+  height: 200px;
+  padding-left: 9rem;
+  padding-bottom: 2rem;
+  float: left;
+}
+
 p2{
  font-size: 2rem;
  font-color: black;

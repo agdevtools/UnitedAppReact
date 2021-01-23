@@ -233,6 +233,8 @@ class FormTable extends Component {
                                               awayTeam={awayTeam4}
                                               />
                             </div>
+                            <p><br></br></p>
+                            <p><br></br></p>
                         </div>
 
   )

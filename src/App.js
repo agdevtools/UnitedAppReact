@@ -10,11 +10,12 @@ class App extends React.Component {
     console.log("Environment is : ", getEnv());
     return (
       <div>
-        <Routing/>
+        <Routing style={{paddingBottom :"9rem" }} />
                     <div>
                     <p><br></br></p>
 
                     <p><br></br></p>
+                     <p><br></br></p>
                     </div>
         <MyFooter  style={{color :"white" }} />
       </div>
