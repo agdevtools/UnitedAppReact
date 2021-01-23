@@ -5,10 +5,10 @@
   },
   "proxies": {
     "/api/": {
-      "origin": "${STATS_API_URL}"
+      "origin": "https://footiestats.herokuapp.com/"
     },
     "/team/": {
-      "origin": "${API_URL}"
+      "origin": "https://unitedappapi.herokuapp.com"
     }
   }
 }
