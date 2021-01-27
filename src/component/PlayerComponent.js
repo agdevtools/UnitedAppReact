@@ -6,10 +6,6 @@ import Navbar from './NavBar';
 import TextField from '@material-ui/core/TextField';
 import HeaderText from './HeaderText';
 
-function action() {
-window.location.href = "/playerCreatec"
-}
-
 //Import React and Select
 
 let playerP = "";
@@ -39,40 +35,45 @@ class PlayerComponent extends Component {
            PlayerComponent.handleReactSelectChange = PlayerComponent.handleReactSelectChange.bind(this)
     }
 
+    handleChange(e){
+           this.setState({[e.target.name]:[e.target.value]});
+    }
+
     componentDidMount() {
         console.log("********* componentDidMount *********")
-        // eslint-disable-next-line
         if (this.props.match.params.id == -1) {
             console.log("**** CREATE MODE *****")
         } else {
         console.log("*** UPDATE MODE *** ")
-          //  this.state.playerId = this.props.match.params.id;
             this.setState({
                     playerId : this.props.match.params.id,
                     isDisabled : true
             })
             this.state.isDisabled = true;
+                    console.log("**** RETRIEVE PLAYER  *****")
+                    TeamDataService.retrievePlayer(this.props.match.params.id )
+                        .then(response => {
+                        this.setState({playerId : response.data.team[0].playerId,
+                                      playerName: response.data.team[0].playerName
+                        })
+                        }
+                        )
         }
-
-        TeamDataService.retrievePlayer(this.props.match.params.id )
-            .then(response => this.setState({
-                playerId : response.data.team.playerId,
-                playerName: response.data.team.playerName
-            }))
         }
 
     onSubmit(values) {
-        console.log("confirmed");
         this.setState({errors: ""});
         this.setState({message: null});
 
         let player = {
             playerId: values.playerId,
-            playerName: values.playerName,
+            playerName: this.state.playerName,
             playerPosition : playerP
         }
         console.log("player object is" , player)
          if (this.props.match.params.id < 0) {
+         player.playerId = this.state.playerId[0]
+         player.playerName = this.state.playerName[0]
          TeamDataService.createPlayer(player.playerId, player.playerName, player.playerPosition, player).then(r => {
          console.log("response is ",r);
          this.props.history.push('/team')
@@ -84,15 +85,15 @@ class PlayerComponent extends Component {
          this.validate(response.data.errorDetails)})
          }
          else {
-        console.log("I'm doing this playerId set")
         player.playerId = this.props.match.params.id
+        player.playerName = this.state.playerName[0]
         TeamDataService.updatePlayer(player.playerId, player.playerName, player.playerPosition, player)
         .then(() => this.props.history.push('/team'))
         .catch( error => {
         const response = error.response
         console.log("this is the errors from unitedapp ", response.data.errorDetails)
         this.validate(response.data.errorDetails)})
-         }
+        }
 
 }
 
@@ -111,7 +112,6 @@ class PlayerComponent extends Component {
        for (let i=0; i < values.length; i++) {
        console.log("Target from error ", values[i].target);
         if (values[i].target === "Player Id") {
-            console.log("turning on errors for ",values[i].target)
             errors.playerId = true;
             errors.playerId = values[i].message;
        }
@@ -165,6 +165,7 @@ class PlayerComponent extends Component {
                                     label="Shirt Number"
                                     autoComplete="off"
                                     disabled={this.state.isDisabled}
+                                    autofocus
                                     inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
                                     InputLabelProps={{
                                                 shrink: true,
@@ -173,7 +174,7 @@ class PlayerComponent extends Component {
                                     error={this.state.errors.playerId && touched.playerId}
                                     variant="outlined"
                                     fullWidth
-                                    onChange={handleChange}
+                                    onChange={(e)=>this.handleChange(e)}
                                     helperText={
                                     this.state.errors.playerId && touched.playerId
                                     ? this.state.errors.playerId : null}
@@ -187,8 +188,11 @@ class PlayerComponent extends Component {
                                       variant="outlined"
                                       autoComplete="off"
                                       fullWidth
-                                      onChange={handleChange}
+
                                       id="playerName"
+                                      value={this.state.playerName}
+                                      onChange={(e)=>this.handleChange(e)}
+                                      disabled={false}
                                       helperText={
                                       this.state.errors.playerName && touched.playerName
                                       ? this.state.errors.playerName : null}
