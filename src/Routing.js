@@ -3,8 +3,9 @@ import Homepage from "./component/HomePage";
 import PlayerComponent from './component/PlayerComponent';
 import PlayerList from './component/PlayerList';
 import TeamComponent from './component/TeamComponent';
+import Login from "./component/Login";
 import TableComponent from './component/LeagueTableComponent';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class Routing extends Component {
       render() {
@@ -12,7 +13,8 @@ class Routing extends Component {
   <Router>
     <>
         <Switch>
-            <Route path="/" exact component={Homepage} />
+            <Route path="/" exact component={Login} />
+            <Route path="/homepage" exact component={Homepage} />
             <Route path="/team" exact component={TeamComponent} />
             <Route path="/playerlist" component={PlayerList} />
             <Route path="/player/:id" component={PlayerComponent} />
