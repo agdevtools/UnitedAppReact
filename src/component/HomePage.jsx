@@ -7,6 +7,7 @@ import pllogo from './pllogo.jpg';
 import HeaderText from './HeaderText';
 import FormCard from './FormCard';
 import TableComponent from './LeagueTableComponentNoNav';
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import FormTable from './FormTable';
 import NextMatch from './NextMatch';
 import MatchDate from './MatchDate';
@@ -149,4 +150,6 @@ if (isMobile) {
     }
 }
 
-export default Homepage
+export default withAuthenticationRequired(Homepage, {
+  onRedirecting: () => <div hello />,
+});

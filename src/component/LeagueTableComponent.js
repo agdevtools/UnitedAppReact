@@ -3,6 +3,7 @@ import TeamDataService from '../service/TeamDataService';
 import MyFooter from './MyFooter';
 import Navbar from './NavBar';
 import HeaderText from './HeaderText';
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 class TableComponent extends Component {
 
@@ -83,7 +84,9 @@ class TableComponent extends Component {
     }
 
 }
-export default TableComponent
+export default withAuthenticationRequired(TableComponent, {
+  onRedirecting: () => <div hello />,
+});
 
 
 

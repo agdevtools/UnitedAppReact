@@ -3,6 +3,7 @@ import TeamDataService from '../service/TeamDataService';
 import MyFooter from './MyFooter';
 import Navbar from './NavBar';
 import HeaderText from './HeaderText';
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 class TeamComponent extends Component {
 
@@ -111,7 +112,9 @@ class TeamComponent extends Component {
     }
 
 }
-export default TeamComponent
+export default withAuthenticationRequired(TeamComponent, {
+  onRedirecting: () => <div hello />,
+});
 
 
 

@@ -3,8 +3,9 @@ import Player from './PlayerCard'
 import Navbar from './NavBar';
 import MyFooter from './MyFooter';
 import HeaderText from './HeaderText';
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
-export default function PlayerList() {
+function PlayerList() {
 
         var players = [{id: "10", name: "Marcus Rashford",image:"https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/06/05/13/Marcus-Rashford.jpg",team:"Manchester United",position:"Striker"},
                         {id: "18", name: "Bruno Fernandes",image:"https://i2-prod.manchestereveningnews.co.uk/sport/football/article18307658.ece/ALTERNATES/s1200b/1_Bruno-Fernandes.jpg",team:"Manchester United",position:"Midfielder"},
@@ -41,3 +42,7 @@ export default function PlayerList() {
 
   )
 }
+
+export default withAuthenticationRequired(PlayerList, {
+  onRedirecting: () => <div hello />,
+});

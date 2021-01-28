@@ -5,6 +5,7 @@ import TeamDataService from '../service/TeamDataService';
 import Navbar from './NavBar';
 import TextField from '@material-ui/core/TextField';
 import HeaderText from './HeaderText';
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 //Import React and Select
 
@@ -223,4 +224,6 @@ class PlayerComponent extends Component {
     }
 }
 
-export default PlayerComponent
+export default withAuthenticationRequired(PlayerComponent, {
+  onRedirecting: () => <div hello />,
+});
