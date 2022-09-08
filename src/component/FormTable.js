@@ -210,6 +210,7 @@ class FormTable extends Component {
                                           awayTeam={awayTeam2}
                                           />
                         </div>
+
                          <div style={{paddingLeft :"0.5rem" }}>
                           <div> <h6> {utcDate3} </h6> </div>
                                  <FormForm  fixtureObject={test}
@@ -223,14 +224,14 @@ class FormTable extends Component {
                           </div>
 
                            <div style={{paddingLeft :"0.5rem" }}>
-                            <div> <h6> {utcDate4} </h6> </div>
+                            <div> <h6> {utcDate3} </h6> </div>
                                    <FormForm  fixtureObject={test}
-                                              homeTeamId={homeTeamId4}
-                                              awayTeamId={awayTeamId4}
-                                              hform={hform4}
-                                              aform={aform4}
-                                              homeTeam={homeTeam4}
-                                              awayTeam={awayTeam4}
+                                              homeTeamId={homeTeamId3}
+                                              awayTeamId={awayTeamId3}
+                                              hform={hform3}
+                                              aform={aform3}
+                                              homeTeam={homeTeam3}
+                                              awayTeam={awayTeam3}
                                               />
                             </div>
                             <p><br></br></p>
